@@ -1,14 +1,16 @@
 /* ===== SOLANGE DUHAMEL — DATA ===== */
 
 const activeProjects = [
+  {t:"Phosphorus-Driven Metabolic Switching in Marine Mixoplankton",role:"PI",funder:"NSF Biological Oceanography",years:"2026–2029",desc:"Collaborative research on how phosphorus availability drives metabolic switching in marine mixoplankton. With Sophie Charvet (Susquehanna University)."},
   {t:"Polyphosphate Production and Cycling in Marine Ecosystems",role:"PI",funder:"NSF Biological Oceanography",years:"2023–2027",desc:"Collaborative research assessing the role of polyphosphate production and cycling in marine ecosystem functioning. With Julia Diaz (SIO)."},
-  {t:"Rivers in Recovery: Contaminants and Ecological Resilience in the Santa Cruz River",role:"PI",funder:"Arizona Institute for Resilience",years:"2025–2026",desc:"Investigating contaminants and ecological resilience in the Santa Cruz River with Christopher Frost."},
-  {t:"From Early Earth to Life on Mars: Landscape Terraformation at Biosphere 2",role:"Co-I",funder:"UA Big Idea Challenge",years:"2025–2028",desc:"Advancing an integrated science of how life transforms planets using digital twinning at Biosphere 2. PI: Scott Saleska."},
-  {t:"Assessing Variability in Phosphorus Allocation to Cellular Biochemicals",role:"PI",funder:"Fulbright U.S. Scholar Award",years:"2026",desc:"Fulbright Scholar research on phosphorus allocation to cellular biochemicals. Hosted in France."},
-  {t:"Polyphosphate as an External Energy Source: Hints on the Emergence of Life?",role:"PI",funder:"Astrobiology Seed Grant",years:"2025–2026",desc:"Investigating polyphosphate as a prebiotic energy source with implications for origins of life. With Alba Filella."}
+  {t:"From Early Earth to Life on Mars: Landscape Terraformation at Biosphere 2",role:"Co-I",funder:"UA Big Idea Challenge",years:"2025–2028",desc:"Advancing an integrated science of how life transforms planets using digital twinning at Biosphere 2. PI: Scott Saleska."}
 ];
 
 const completedProjects = [
+  {t:"Assessing Variability in Phosphorus Allocation to Cellular Biochemicals",role:"PI",funder:"Fulbright U.S. Scholar Award",years:"2026",desc:"Fulbright Scholar research on phosphorus allocation to cellular biochemicals."},
+  {t:"Rivers in Recovery: Contaminants and Ecological Resilience in the Santa Cruz River",role:"PI",funder:"Arizona Institute for Resilience",years:"2025–2026",desc:"Investigating contaminants and ecological resilience in the Santa Cruz River with Christopher Frost."},
+  {t:"Polyphosphate as an External Energy Source: Hints on the Emergence of Life?",role:"PI",funder:"Astrobiology Seed Grant",years:"2025–2026",desc:"Investigating polyphosphate as a prebiotic energy source with implications for origins of life. With Alba Filella."},
+  {t:"Seasonal Dynamics of Contaminants and Microbial Responses in the Santa Cruz River",role:"PI",funder:"TRIF Water, Environmental, and Energy Solutions",years:"2024–2025",desc:"Seasonal monitoring of organophosphate ester contaminants and microbial responses in the Santa Cruz River. With Christopher Frost."},
   {t:"Compound-Specific Phosphorus Hydrolase Transformations in the Marine Phosphorus Cycle",role:"PI",funder:"NSF Chemical Oceanography",years:"2019–2022",desc:"Assessing the role of compound-specific phosphorus hydrolase transformations in the marine P cycle. With Julia Diaz."},
   {t:"Solar Salamanders: Algal Invasion of a Vertebrate",role:"Co-PI",funder:"Gordon and Betty Moore Foundation",years:"2017–2023",desc:"Investigating a remarkable vertebrate–alga endosymbiosis in spotted salamanders. With R. Kerney, J. Burns, D. Matus."},
   {t:"Development of Low N:P Ratios in the Euphotic Zone",role:"Co-PI",funder:"NSF Chemical Oceanography",years:"2018–2023",desc:"The phosphorus side of the story—why N:P ratios decline in the euphotic zone. With Juhl, Subramaniam, Thurnherr at Columbia."},
@@ -19,7 +21,10 @@ const completedProjects = [
 ];
 
 const pubs = [
-  {n:70,y:2026,t:"Phosphorus limitation shifts cellular phosphorus allocation toward polyphosphate by depleting other phosphorus pools in Synechococcus",a:"Duhamel, S., Filella, A., Segura-Noguera, M., Gomez-Buckley, A., Carini, P., and J.M. Diaz",j:"The ISME Journal, wrag285",doi:"10.1093/ismejo/wrag285",tags:["phosphorus","first"]},
+  {n:73,y:2026,t:"Phosphorus limitation shifts cellular phosphorus allocation toward polyphosphate by depleting other phosphorus pools in Synechococcus",a:"Filella, A., Segura-Noguera, M., Gomez-Buckley, A., Carini, P., Diaz, J.M., and S. Duhamel",j:"The ISME Journal, wrag285",doi:"10.1093/ismejo/wrag285",tags:["phosphorus"]},
+  {n:72,y:2026,t:"Global compilation of in situ particulate organic carbon, nitrogen, and phosphorus concentrations in coastal and open ocean waters",a:"Fumenia, A., Loisel, H., Moutin, T., et al. including S. Duhamel",j:"Scientific Data",doi:"10.1038/s41597-026-08413-7",tags:["marine"]},
+  {n:71,y:2026,t:"A global oceanic dataset of dissolved organophosphate esters",a:"Waggoner, E.M., Frost, C., and S. Duhamel",j:"Scientific Data, 13: 1549",doi:"10.1038/s41597-026-07868-y",tags:["phosphorus","student"]},
+  {n:70,y:2026,t:"Microbial dispersal from a hyperactive sandsheet in the Icelandic Highland",a:"Hadland, N.K., Hamilton, C.W., Schroedl, P., Calabrese, F., Marlow, J., and S. Duhamel",j:"Science of The Total Environment, 1025: 181659",doi:"10.1016/j.scitotenv.2026.181659",tags:["astrobiology","student"]},
   {n:69,y:2025,t:"Three eruptions at the Fagradalsfjall Volcano in Iceland show rapid and predictable microbial community establishment",a:"Hadland, N.K., Hamilton, C.W., Björnsdóttir, S.H., and S. Duhamel",j:"Communications Biology, 8: 1657",doi:"10.1038/s42003-025-09044-1",tags:["astrobiology","student"]},
   {n:68,y:2025,t:"The microbial phosphorus cycle in aquatic ecosystems",a:"Duhamel, S.",j:"Nature Reviews Microbiology, 1–17",doi:"10.1038/s41579-024-01119-w",tags:["phosphorus","first","invited"]},
   {n:67,y:2024,t:"Adaptive responses of cyanobacteria to phosphate limitation: a focus on marine diazotrophs",a:"Caille, C., Duhamel, S., Latifi, A., and S. Rabouille",j:"Environmental Microbiology, 26(12), e70023",doi:"10.1111/1462-2920.70023",tags:["phosphorus"]},
@@ -109,14 +114,20 @@ const preprints = [
 
 const outreach = [
   {y:2021,t:"How microbes in Iceland can teach us about possible life on Mars?",a:"Duhamel, S., and C.W. Hamilton",j:"Futurum Careers, Issue 7: 22–25. ISSN 2632-8380",lang:"",url:"https://doi.org/10.33424/FUTURUM112"},
-  {y:2006,t:"Les virus planctoniques : un compartiment biologique clé des milieux aquatiques",a:"Personnic, S., Duhamel, S., Bettarel, Y., Sime-Ngando, T., and S. Jacquet",j:"Le Courrier de l'Environnement de l'INRA, 53: 19–34",lang:"French",url:""},
-  {y:2005,t:"Importance des virus en milieu lacustre",a:"Duhamel, S., Personnic, S., and S. Jacquet",j:"INRA Mensuel",lang:"French",url:"https://academiccommons.columbia.edu/doi/10.7916/d8-n1he-rh90"}
+  {y:2005,t:"Importance des virus en milieu lacustre",a:"Duhamel, S., Personnic, S., and S. Jacquet",j:"INRA Mensuel, 122: 8–9",lang:"French",url:"https://academiccommons.columbia.edu/doi/10.7916/d8-n1he-rh90"}
 ];
 
 const datasets = [
   {y:2025,t:"Rapid microbial colonization of new lava at Fagradalsfjall, Iceland",a:"Hadland, N. and S. Duhamel",repo:"NCBI SRA, BioProject: PRJNA1205709",h:"https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1205709"},
   {y:2026,t:"Microbial Dispersal from a Hyperactive Sandsheet in the Icelandic Highlands",a:"Hadland, N. and S. Duhamel",repo:"NCBI SRA, BioProject: PRJNA1260575",h:"https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1260575"},
-  {y:2025,t:"ATP Analysis Code",a:"Hadland, N. and S. Duhamel",repo:"GitHub",h:"https://github.com/DuhamelLab/ATP"}
+  {y:2025,t:"ATP Analysis Code",a:"Hadland, N. and S. Duhamel",repo:"GitHub",h:"https://github.com/DuhamelLab/ATP"},
+  {y:2024,t:"Exoproteome of phosphorus-stressed Synechococcus WH8102 and WH5701",a:"Waggoner, E.M., Djaoudi, K., Diaz, J.M., and S. Duhamel",repo:"PRIDE / ProteomeXchange: PXD051991",h:"https://doi.org/10.6019/PXD051991"},
+  {y:2024,t:"RNA-seq of the prasinophyte Pterosperma cristatum under varying nutrient availability",a:"Charvet, S., Bock, N.A., Kim, E., and S. Duhamel",repo:"NCBI SRA: SRR29192181–SRR29192187",h:"https://www.ncbi.nlm.nih.gov/sra/?term=SRR29192181"},
+  {y:2022,t:"16S rRNA sequences from the North Pacific Subtropical Gyre glucose assimilation study",a:"Muñoz-Marín, M.C., Duhamel, S., et al.",repo:"NCBI SRA, BioProject: PRJNA758505",h:"https://www.ncbi.nlm.nih.gov/bioproject/PRJNA758505"},
+  {y:2022,t:"Microbial response to increased temperatures within a lava-induced hydrothermal system in Iceland",a:"Duhamel, S., Hamilton, C.W., Pálsson, S., and S.H. Björnsdóttir",repo:"NCBI SRA, BioProject: PRJNA750448",h:"https://www.ncbi.nlm.nih.gov/bioproject/PRJNA750448"},
+  {y:2021,t:"Small pigmented eukaryote assemblages around the Amazon River plume",a:"Charvet, S., Kim, E., Subramaniam, A., Montoya, J., and S. Duhamel",repo:"NCBI SRA, BioProject: PRJNA701187",h:"https://www.ncbi.nlm.nih.gov/bioproject/PRJNA701187"},
+  {y:2026,t:"BCO-DMO datasets (23 datasets)",a:"S. Duhamel and collaborators",repo:"Biological and Chemical Oceanography Data Management Office",h:"https://www.bco-dmo.org/person/542287"},
+  {y:2026,t:"ReDATA datasets (4 datasets)",a:"S. Duhamel and collaborators",repo:"University of Arizona Research Data Repository",h:"https://arizona.figshare.com/authors/Solange_Duhamel/12530509"}
 ];
 
 const media = [
@@ -124,6 +135,8 @@ const media = [
   {o:"Futurum Careers, 2021",t:"How microbes in Iceland can teach us about possible life on Mars",h:"https://doi.org/10.33424/FUTURUM112"},
   {o:"Earth2Class teacher workshop, 2021",t:"Researching a vital element for life: microbial phosphorus metabolism in the ocean (with J.M. Diaz)",h:"https://web.archive.org/web/20240604221305/https://earth2class.org/site/?p=17157"},
   {o:"Intrepid Museum Youth Summit, 2021",t:"Marine microbes outreach video",h:"https://www.youtube.com/watch?v=eLSIGFP-Hm8"},
+  {o:"Earth2Class teacher workshop, 2016",t:"Studying phytoplankton adaptations to different marine environments",h:"https://web.archive.org/web/20251219214045/https://earth2class.org/site/?p=9816"},
+  {o:"OUTPACE cruise video, 2015",t:"Explaining the objectives of the OUTPACE cruise to the public",h:"https://www.youtube.com/watch?v=pT-SiEy9khQ"},
   {o:"Le Courrier de l'Environnement de l'INRA, 2006",t:"Les virus planctoniques : un compartiment biologique clé des milieux aquatiques (in French)",h:""},
   {o:"INRA Mensuel, 2005",t:"Importance des virus en milieu lacustre (in French)",h:"https://academiccommons.columbia.edu/doi/10.7916/d8-n1he-rh90"}
 ];
