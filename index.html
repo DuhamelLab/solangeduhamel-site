@@ -28,21 +28,31 @@
   <meta name="twitter:title" content="Solange Duhamel — Marine Microbiology, Biogeochemistry, and Astrobiology">
   <meta name="twitter:description" content="Professor at the Department of Molecular and Cellular Biology, University of Arizona.">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 
+  <!-- Fonts (self-hosted, see css/fonts.css) -->
+  <link rel="preload" href="fonts/plus-jakarta-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="images/hero-wide.webp" as="image" media="(min-width: 701px)">
   <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Solange Duhamel","jobTitle":"Professor","worksFor":[{"@type":"Organization","name":"University of Arizona, Department of Molecular and Cellular Biology"}],"url":"https://solangeduhamel.com","sameAs":["https://scholar.google.com/citations?user=GpkraS0AAAAJ","https://orcid.org/0000-0002-8435-4695"],"knowsAbout":["Marine Microbiology","Phosphorus Biogeochemistry","Astrobiology","Microbial Ecophysiology","Flow Cytometry"]},
-  {"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"The microbial phosphorus cycle in aquatic ecosystems","author":[{"@type":"Person","name":"Solange Duhamel"}],"datePublished":"2025","isPartOf":{"@type":"Periodical","name":"Nature Reviews Microbiology"},"sameAs":"https://doi.org/10.1038/s41579-024-01119-w"},
-  {"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Phosphorus as an integral component of global marine biogeochemistry","author":[{"@type":"Person","name":"Solange Duhamel"},{"@type":"Person","name":"Julia M. Diaz"}],"datePublished":"2021","isPartOf":{"@type":"Periodical","name":"Nature Geosciences"},"sameAs":"https://doi.org/10.1038/s41561-021-00755-8"},
-  {"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Three eruptions at the Fagradalsfjall Volcano in Iceland show rapid and predictable microbial community establishment","author":[{"@type":"Person","name":"Nathan K. Hadland"},{"@type":"Person","name":"Christopher W. Hamilton"},{"@type":"Person","name":"Solange Duhamel"}],"datePublished":"2025","isPartOf":{"@type":"Periodical","name":"Communications Biology"},"sameAs":"https://doi.org/10.1038/s42003-025-09044-1"},
-  {"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Microbial response to increased temperatures within a lava-induced hydrothermal system in Iceland","author":[{"@type":"Person","name":"Solange Duhamel"},{"@type":"Person","name":"Christopher W. Hamilton"}],"datePublished":"2022","isPartOf":{"@type":"Periodical","name":"Astrobiology"},"sameAs":"https://doi.org/10.1089/ast.2021.0124"}
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Person","@id":"https://solangeduhamel.com/#person","name":"Solange Duhamel","honorificPrefix":"Dr.","jobTitle":"Professor","url":"https://solangeduhamel.com/","image":"https://solangeduhamel.com/images/profile-1.webp","email":"mailto:duhamel@arizona.edu",
+     "identifier":{"@type":"PropertyValue","propertyID":"ORCID","value":"0000-0002-8435-4695"},
+     "sameAs":["https://orcid.org/0000-0002-8435-4695","https://scholar.google.com/citations?user=GpkraS0AAAAJ"],
+     "worksFor":{"@type":"CollegeOrUniversity","name":"University of Arizona","url":"https://www.arizona.edu/"},
+     "affiliation":[{"@type":"Organization","name":"Department of Molecular and Cellular Biology, University of Arizona"},{"@type":"Organization","name":"Lunar and Planetary Laboratory, University of Arizona"},{"@type":"Organization","name":"BIO5 Institute, University of Arizona"},{"@type":"Organization","name":"Lamont-Doherty Earth Observatory, Columbia University"}],
+     "alumniOf":[{"@type":"CollegeOrUniversity","name":"Aix-Marseille University"},{"@type":"CollegeOrUniversity","name":"Pierre and Marie Curie University"}],
+     "knowsAbout":["Marine microbiology","Phosphorus biogeochemistry","Astrobiology","Microbial ecophysiology","Mixotrophy","Flow cytometry"]},
+    {"@type":"WebSite","@id":"https://solangeduhamel.com/#website","url":"https://solangeduhamel.com/","name":"Solange Duhamel","publisher":{"@id":"https://solangeduhamel.com/#person"},"inLanguage":"en"},
+    {"@type":"ScholarlyArticle","headline":"The microbial phosphorus cycle in aquatic ecosystems","author":{"@id":"https://solangeduhamel.com/#person"},"datePublished":"2025","isPartOf":{"@type":"Periodical","name":"Nature Reviews Microbiology"},"sameAs":"https://doi.org/10.1038/s41579-024-01119-w"},
+    {"@type":"ScholarlyArticle","headline":"Phosphorus as an integral component of global marine biogeochemistry","author":[{"@id":"https://solangeduhamel.com/#person"},{"@type":"Person","name":"Julia M. Diaz"}],"datePublished":"2021","isPartOf":{"@type":"Periodical","name":"Nature Geoscience"},"sameAs":"https://doi.org/10.1038/s41561-021-00755-8"},
+    {"@type":"ScholarlyArticle","headline":"Three eruptions at the Fagradalsfjall Volcano in Iceland show rapid and predictable microbial community establishment","author":[{"@type":"Person","name":"Nathan K. Hadland"},{"@type":"Person","name":"Christopher W. Hamilton"},{"@type":"Person","name":"Snædís H. Björnsdóttir"},{"@id":"https://solangeduhamel.com/#person"}],"datePublished":"2025","isPartOf":{"@type":"Periodical","name":"Communications Biology"},"sameAs":"https://doi.org/10.1038/s42003-025-09044-1"}
+  ]}
   </script>
 </head>
 <body>
@@ -60,27 +70,30 @@
     <a href="#opportunities" data-page="opportunities">Opportunities</a>
     <a href="#data" data-page="data">Data and Resources</a>
   </div>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+  <button class="nav-hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
 </nav>
-<div class="mobile-menu" id="mobile-menu">
+<nav class="mobile-menu" id="mobile-menu" aria-label="Main navigation (mobile)">
   <a href="#home" data-page="home">Home</a>
   <a href="#research" data-page="research">Research</a>
   <a href="#publications" data-page="publications">Publications</a>
   <a href="#team" data-page="team">Team</a>
   <a href="#opportunities" data-page="opportunities">Opportunities</a>
   <a href="#data" data-page="data">Data and Resources</a>
-</div>
+</nav>
 
+<main id="main-content" tabindex="-1">
 <!-- ===== HOME PAGE ===== -->
-<div id="main-content" role="main"></div>
 <div id="page-home" class="page">
   <div class="hero">
-    <div class="hero-bg" style="background-image:url('images/hero.webp')"></div>
+    <div class="hero-bg"><picture>
+      <source media="(min-width: 701px)" srcset="images/hero-wide.webp" width="1080" height="720">
+      <img src="images/hero-600.webp" width="600" height="1300" alt="" fetchpriority="high" decoding="async">
+    </picture></div>
     <div class="hero-overlay"></div>
     <div class="hero-content fade-in">
       <div class="hero-layout">
         <div class="hero-text-col">
-          <h1>Solange<br><span class="gradient">Duhamel</span></h1>
+          <h1 tabindex="-1">Solange<br><span class="gradient">Duhamel</span></h1>
           <p class="hero-text">Understanding the role of microorganisms in biogeochemical transformations&#8212;from phosphorus cycling in the open ocean to microbial colonization of volcanic terrains&#8212;reveals how life shapes planetary chemistry and where it might emerge beyond Earth.</p>
           <div class="affiliation-chips">
             <span class="affiliation-chip">Molecular &amp; Cellular Biology · UA</span>
@@ -91,7 +104,7 @@
         </div>
         <div class="hero-portrait-col">
           <div class="hero-portrait" id="hero-portrait">
-            <img src="images/profile-1.webp" alt="Solange Duhamel">
+            <img src="images/profile-1.webp" alt="Portrait of Solange Duhamel" width="480" height="480">
           </div>
         </div>
       </div>
@@ -103,24 +116,24 @@
     <p class="tag-label">Recent Publications and News</p>
     <h2 class="section-heading">Latest Work</h2>
     <div class="latest-grid" id="latest-grid"></div>
+    <p class="latest-more-wrap"><a href="#publications" data-page="publications" id="latest-more" class="more-link">All publications →</a></p>
   </div>
 
   <!-- Phosphorus Spotlight -->
   <div class="section" style="padding-top:0">
-    <div class="spotlight" style="position:relative;overflow:hidden;padding:0;min-height:520px">
-      <div style="position:absolute;inset:0;background:#ffffff"></div>
-      <div class="parallax-bg" style="position:absolute;top:15%;bottom:0;left:0;right:0;background-image:url('images/phosphorus-figure.webp');background-size:contain;background-position:center;background-repeat:no-repeat;opacity:0.85"></div>
-      <div style="position:absolute;inset:0;background:rgba(6,10,18,0.70)"></div>
-      <div style="position:relative;z-index:2;padding:40px">
-      <div class="spotlight-layout">
-        <div class="spotlight-text">
-          <span class="mono-tag">Focus Area &#183; Phosphorus</span>
-          <h3>The Microbial Phosphorus Cycle</h3>
-          <p>Phosphorus is essential for all life&#8212;it forms the backbone of DNA, drives cellular energy, and limits productivity across vast ocean regions. Our work reveals how marine microorganisms acquire, transform, and recycle phosphorus compounds, reshaping our understanding of global biogeochemical cycles. The 2025 <em>Nature Reviews Microbiology</em> synthesis represents two decades of research on this vital element.</p>
-          <a href="https://doi.org/10.1038/s41579-024-01119-w" target="_blank" rel="noopener noreferrer" style="font-family:var(--mono);font-size:12px;display:inline-block;margin-top:12px">Read in Nature Reviews Microbiology &#8599;</a>
-        </div>
+    <div class="spotlight figure-feature">
+      <div class="spotlight-text">
+        <span class="mono-tag">Focus Area &#183; Phosphorus</span>
+        <h3>The Microbial Phosphorus Cycle</h3>
+        <p>Phosphorus is essential for all life&#8212;it forms the backbone of DNA, drives cellular energy, and limits productivity across vast ocean regions. Our work reveals how marine microorganisms acquire, transform, and recycle phosphorus compounds, reshaping our understanding of global biogeochemical cycles. The 2025 <i>Nature Reviews Microbiology</i> synthesis represents two decades of research on this vital element.</p>
+        <a href="https://doi.org/10.1038/s41579-024-01119-w" target="_blank" rel="noopener noreferrer" class="more-link">Read in Nature Reviews Microbiology &#8599;</a>
       </div>
-      </div>
+      <figure class="figure-plate">
+        <a href="images/phosphorus-figure.webp" target="_blank" rel="noopener" aria-label="Open the phosphorus cycle figure full size">
+          <img src="images/phosphorus-figure.webp" width="1200" height="817" loading="lazy" decoding="async" alt="Block diagram of the phosphorus cycle from land to the open ocean. Phosphorus from uplift, weathering, atmospheric deposition and guano moves through streams, rivers, lakes, wetlands and groundwater to the delta, shelf and open ocean. At each stage, microorganisms take up phosphorus, animals consume it, and mineralization, decomposition and burial in sediments return or remove it; upwelling, downwelling and lateral advection move it within the ocean.">
+        </a>
+        <figcaption>The microbial phosphorus cycle across the land&#8211;freshwater&#8211;ocean continuum, showing geological, hydrological and biological processes. From Duhamel, S. (2025) <i>Nature Reviews Microbiology</i>, <a href="https://doi.org/10.1038/s41579-024-01119-w" target="_blank" rel="noopener noreferrer">doi:10.1038/s41579-024-01119-w</a>. Select the figure to view it full size.</figcaption>
+      </figure>
     </div>
   </div>
 
@@ -133,16 +146,14 @@
         <div class="highlight-card-body">
           <h4>Marine Phosphorus Biogeochemistry</h4>
           <p>Understanding how microorganisms mediate phosphorus cycling in the ocean, from dissolved organic P utilization to polyphosphate dynamics. Developing new single-cell methods to track element fluxes.</p>
-          <button class="expand-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'&#9650; Less':'&#9660; More'">&#9660; More</button>
-          <div class="highlight-detail">Phosphorus limits marine productivity across vast ocean regions. Our lab pioneers single-cell flow cytometry techniques to measure phosphatase activity and P uptake at the individual cell level, revealing how different microbial groups partition this critical resource. This work spans the oligotrophic Pacific gyres, the Mediterranean, and tropical Atlantic.</div>
+          <details class="highlight-more"><summary>More</summary><div class="highlight-detail">Phosphorus limits marine productivity across vast ocean regions. Our lab pioneers single-cell flow cytometry techniques to measure phosphatase activity and P uptake at the individual cell level, revealing how different microbial groups partition this critical resource. This work spans the oligotrophic Pacific gyres, the Mediterranean, and tropical Atlantic.</div></details>
         </div>
       </div>
       <div class="highlight-card">
         <div class="highlight-card-body">
           <h4>Mixotrophy &amp; Microbial Ecophysiology</h4>
           <p>Investigating how small pigmented eukaryotes and cyanobacteria combine photosynthesis with organic matter uptake&#8212;a widespread but underappreciated metabolic strategy in the ocean.</p>
-          <button class="expand-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'&#9650; Less':'&#9660; More'">&#9660; More</button>
-          <div class="highlight-detail">Mixotrophy&#8212;the combination of phototrophy and heterotrophy&#8212;is far more prevalent than traditionally recognized. Our work demonstrates that small pigmented eukaryotes and unicellular cyanobacteria routinely supplement photosynthesis with organic carbon and phosphorus uptake, fundamentally altering our understanding of marine food webs and carbon cycling.</div>
+          <details class="highlight-more"><summary>More</summary><div class="highlight-detail">Mixotrophy&#8212;the combination of phototrophy and heterotrophy&#8212;is far more prevalent than traditionally recognized. Our work demonstrates that small pigmented eukaryotes and unicellular cyanobacteria routinely supplement photosynthesis with organic carbon and phosphorus uptake, fundamentally altering our understanding of marine food webs and carbon cycling.</div></details>
         </div>
       </div>
       <div class="highlight-card">
@@ -150,16 +161,14 @@
         <div class="highlight-card-body">
           <h4>Astrobiology &amp; Volcanic Microbiology</h4>
           <p>Studying microbial colonization of freshly emplaced volcanic terrains in Iceland as analogs for understanding habitability on Mars and other planetary bodies.</p>
-          <button class="expand-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'&#9650; Less':'&#9660; More'">&#9660; More</button>
-          <div class="highlight-detail">Young volcanic terrains represent some of the most extreme environments on Earth, yet microbial communities colonize them rapidly and predictably. Our fieldwork at Fagradalsfjall and Holuhraun in Iceland demonstrates that microbial establishment follows repeatable ecological patterns&#8212;insights directly relevant to understanding the habitability potential of volcanic terrains on Mars.</div>
+          <details class="highlight-more"><summary>More</summary><div class="highlight-detail">Young volcanic terrains represent some of the most extreme environments on Earth, yet microbial communities colonize them rapidly and predictably. Our fieldwork at Fagradalsfjall and Holuhraun in Iceland demonstrates that microbial establishment follows repeatable ecological patterns&#8212;insights directly relevant to understanding the habitability potential of volcanic terrains on Mars.</div></details>
         </div>
       </div>
       <div class="highlight-card">
         <div class="highlight-card-body">
           <h4>Vertebrate&#8211;Alga Symbiosis</h4>
           <p>Exploring the remarkable endosymbiosis between green algae and spotted salamanders&#8212;the only known vertebrate&#8211;photosynthetic alga symbiosis&#8212;supported by the Gordon and Betty Moore Foundation.</p>
-          <button class="expand-btn" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'&#9650; Less':'&#9660; More'">&#9660; More</button>
-          <div class="highlight-detail">The spotted salamander (<em>Ambystoma maculatum</em>) harbors intracellular green algae&#8212;the only known case of a photosynthetic endosymbiosis in a vertebrate. Our Moore Foundation-funded work investigates the cellular and molecular mechanisms of this interaction, revealing heterotrophic carbon fixation and complex organismal-cellular negotiations.</div>
+          <details class="highlight-more"><summary>More</summary><div class="highlight-detail">The spotted salamander (<em>Ambystoma maculatum</em>) harbors intracellular green algae&#8212;the only known case of a photosynthetic endosymbiosis in a vertebrate. Our Moore Foundation-funded work investigates the cellular and molecular mechanisms of this interaction, revealing heterotrophic carbon fixation and complex organismal-cellular negotiations.</div></details>
         </div>
       </div>
     </div>
@@ -182,7 +191,7 @@
       </div>
       <div class="profile-col">
         <div class="profile-circle" id="about-portrait">
-          <img src="images/profile-1.webp" alt="Solange Duhamel">
+          <img src="images/profile-1.webp" alt="Portrait of Solange Duhamel" width="480" height="480">
         </div>
       </div>
     </div>
@@ -237,7 +246,7 @@
     <div class="page-banner-bg" style="background-image:url('images/research-banner.webp');background-position:center 50%"></div>
     <div class="page-banner-overlay"></div>
     <div class="page-banner-content">
-      <div><p class="tag-label">Research</p><h2 class="section-heading" style="font-size:32px;margin-bottom:0">Research Program</h2></div>
+      <div><p class="tag-label">Research</p><h1 class="section-heading banner-title" tabindex="-1">Research Program</h1></div>
     </div>
   </div>
   <div class="section">
@@ -255,50 +264,53 @@
     <div class="page-banner-bg" style="background-image:url('images/pubs-banner.webp');background-position:center 50%"></div>
     <div class="page-banner-overlay"></div>
     <div class="page-banner-content">
-      <div><p class="tag-label">Peer-Reviewed</p><h2 class="section-heading" style="font-size:32px;margin-bottom:0">Publications</h2></div>
+      <div><p class="tag-label">Peer-Reviewed</p><h1 class="section-heading banner-title" tabindex="-1">Publications</h1></div>
     </div>
   </div>
   <div class="section">
-    <p class="section-sub" id="pub-summary">70 peer-reviewed articles, 1 preprint, 5 book chapters, and 2 outreach articles.</p>
+    <p class="section-sub" id="pub-summary"></p>
     <div class="data-tabs" id="pub-tabs" role="tablist" aria-label="Publication types" style="margin-bottom:24px">
-      <button class="data-tab active" data-pubtab="articles">Peer-Reviewed Articles</button>
-      <button class="data-tab" data-pubtab="preprints">Preprints</button>
-      <button class="data-tab" data-pubtab="bookchapters">Book Chapters</button>
-      <button class="data-tab" data-pubtab="outreach">Outreach Articles</button>
+      <button class="data-tab active" type="button" role="tab" data-pubtab="articles">Peer-Reviewed Articles</button>
+      <button class="data-tab" type="button" role="tab" data-pubtab="preprints">Preprints</button>
+      <button class="data-tab" type="button" role="tab" data-pubtab="bookchapters">Book Chapters</button>
+      <button class="data-tab" type="button" role="tab" data-pubtab="outreach">Outreach Articles</button>
     </div>
     <div id="pub-panel-articles" class="pub-tab-panel">
+    <section id="selected-pubs" class="selected-pubs" hidden aria-labelledby="selected-head">
+      <h2 class="selected-head" id="selected-head">Selected publications</h2>
+      <div id="selected-list" class="selected-list"></div>
+    </section>
     <div class="pub-search-row">
-      <input type="text" class="pub-search" id="pub-search" aria-label="Search publications" placeholder="Search by author, title, journal, or year...">
-      <div class="scholar-metrics">
-        <div class="scholar-metric"><span class="metric-value">2,631</span><span class="metric-label">Citations</span></div>
-        <div class="scholar-metric"><span class="metric-value">27</span><span class="metric-label">h-index</span></div>
-        <div class="scholar-metric"><span class="metric-value">56</span><span class="metric-label">i10-index</span></div>
-      </div>
+      <label class="sr-only" for="pub-search">Search publications</label>
+      <input type="search" class="pub-search" id="pub-search" placeholder="Search by author, title, journal, or year…" autocomplete="off">
+      <div class="scholar-metrics" id="scholar-metrics" hidden></div>
     </div>
     <a href="https://scholar.google.com/citations?user=GpkraS0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="scholar-link">Google Scholar Profile &#8599;</a>
     <div class="filter-chips" id="filter-chips" role="group" aria-label="Filter publications">
-      <button class="filter-chip active" data-filter="all">All</button>
-      <button class="filter-chip" data-filter="first">First Author</button>
-      <button class="filter-chip" data-filter="student">Student Led</button>
-      <button class="filter-chip" data-filter="phosphorus">Phosphorus</button>
-      <button class="filter-chip" data-filter="astrobiology">Astrobiology</button>
-      <button class="filter-chip" data-filter="mixotrophy">Mixotrophy</button>
-      <button class="filter-chip" data-filter="marine">Marine</button>
-      <button class="filter-chip" data-filter="methods">Methods</button>
+      <button type="button" class="filter-chip active" data-filter="all">All</button>
+      <button type="button" class="filter-chip" data-filter="first">First Author</button>
+      <button type="button" class="filter-chip" data-filter="student">Student Led</button>
+      <button type="button" class="filter-chip" data-filter="phosphorus">Phosphorus</button>
+      <button type="button" class="filter-chip" data-filter="astrobiology">Astrobiology</button>
+      <button type="button" class="filter-chip" data-filter="mixotrophy">Mixotrophy</button>
+      <button type="button" class="filter-chip" data-filter="marine">Marine</button>
+      <button type="button" class="filter-chip" data-filter="methods">Methods</button>
+      <button class="filter-chip oa-chip" data-filter="oa">Free to read</button>
+      <button class="filter-chip year-chip" id="year-clear" type="button" hidden></button>
     </div>
-    <p class="pub-count" id="pub-count">Showing 70 publications</p>
+    <p class="pub-count"><span id="pub-count" aria-live="polite"></span> <span class="oa-summary" id="oa-summary"></span></p>
     <div id="pub-chart" class="chart-container"></div>
     <div id="pub-list"></div>
     </div><!-- end pub-panel-articles -->
-    <div id="pub-panel-bookchapters" class="pub-tab-panel" style="display:none">
-      <p style="color:var(--dim);font-size:16px;margin-bottom:20px">5 book chapters and edited volumes.</p>
+    <div id="pub-panel-bookchapters" class="pub-tab-panel" hidden>
+      <p class="panel-intro">Book chapters and edited volumes.</p>
       <div id="pub-bookchapters-list"></div>
     </div>
-    <div id="pub-panel-preprints" class="pub-tab-panel" style="display:none">
+    <div id="pub-panel-preprints" class="pub-tab-panel" hidden>
       <p style="color:var(--dim);font-size:16px;margin-bottom:20px">Manuscripts posted ahead of peer review. Each entry links to its published version once it appears.</p>
       <div id="pub-preprints-list"></div>
     </div>
-    <div id="pub-panel-outreach" class="pub-tab-panel" style="display:none">
+    <div id="pub-panel-outreach" class="pub-tab-panel" hidden>
       <p style="color:var(--dim);font-size:16px;margin-bottom:20px">Articles written for general and professional audiences.</p>
       <div id="pub-outreach-list"></div>
     </div>
@@ -312,14 +324,14 @@
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,rgba(6,10,18,0.5) 82%,rgba(6,10,18,0.95) 94%,rgba(6,10,18,1.0) 100%)"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent 50%,rgba(6,10,18,0.5) 75%,rgba(6,10,18,0.95) 94%)"></div>
     <div class="page-banner-content">
-      <div><p class="tag-label">The Lab</p><h2 class="section-heading" style="font-size:32px;margin-bottom:0">Team</h2></div>
+      <div><p class="tag-label">The Lab</p><h1 class="section-heading banner-title" tabindex="-1">Team</h1></div>
     </div>
   </div>
   <div class="section">
     <p class="section-sub">Current and former members of the Duhamel Lab.</p>
     <div class="team-tabs" id="team-tabs" role="tablist" aria-label="Team sections">
-      <button class="team-tab active" data-tab="current">Current Members</button>
-      <button class="team-tab" data-tab="alumni">Alumni</button>
+      <button class="team-tab active" type="button" role="tab" data-tab="current">Current Members</button>
+      <button class="team-tab" type="button" role="tab" data-tab="alumni">Alumni</button>
     </div>
     <div id="team-current" class="team-panel active">
 
@@ -338,10 +350,10 @@
     <div class="team-entry"><span class="team-years">2016&#8211;2021</span><span class="team-info"><strong>Nicholas Bock</strong><span class="team-role">Ph.D. Earth &amp; Environmental Sciences, Columbia University. Global phytoplankton community structure.</span></span></div>
 
     <h3 class="section-divider">Postdoctoral Researchers</h3>
-    <div class="team-entry"><span class="team-years">2024&#8211;2026</span><span class="team-info"><strong>Dr. Alba Filella</strong><span class="team-role">Polyphosphate and phosphorus allocation in marine phytoplankton. <span class="team-award"><strong>BIO5 Postdoctoral Fellowship</strong></span></span></span></div>
-    <div class="team-entry"><span class="team-years">2022&#8211;2023</span><span class="team-info"><strong>Dr. Joost Mansoor</strong><span class="team-role">Vertebrate&#8211;alga symbiosis metabolic fluxes.</span></span></div>
-    <div class="team-entry"><span class="team-years">2019&#8211;2021</span><span class="team-info"><strong>Dr. Hui Yang</strong><span class="team-role">Vertebrate&#8211;alga symbiosis.</span></span></div>
-    <div class="team-entry"><span class="team-years">2019&#8211;2021</span><span class="team-info"><strong>Dr. Kahina Djaoudi</strong><span class="team-role">Dissolved organic phosphorus bioavailability.</span></span></div>
+    <div class="team-entry"><span class="team-years">2024&#8211;2026</span><span class="team-info"><strong>Dr. Alba Filella</strong><span class="team-role">Polyphosphate and phosphorus allocation in marine phytoplankton, University of Arizona. <span class="team-award"><strong>BIO5 Postdoctoral Fellowship</strong></span></span></span></div>
+    <div class="team-entry"><span class="team-years">2022&#8211;2023</span><span class="team-info"><strong>Dr. Joost Mansoor</strong><span class="team-role">Vertebrate&#8211;alga symbiosis metabolic fluxes, University of Arizona.</span></span></div>
+    <div class="team-entry"><span class="team-years">2019&#8211;2021</span><span class="team-info"><strong>Dr. Hui Yang</strong><span class="team-role">Vertebrate&#8211;alga symbiosis, University of Arizona.</span></span></div>
+    <div class="team-entry"><span class="team-years">2019&#8211;2021</span><span class="team-info"><strong>Dr. Kahina Djaoudi</strong><span class="team-role">Dissolved organic phosphorus bioavailability, University of Arizona.</span></span></div>
     <div class="team-entry"><span class="team-years">2018&#8211;2019</span><span class="team-info"><strong>Dr. John Burns</strong><span class="team-role">Salamander&#8211;alga symbiosis, Columbia University.</span></span></div>
     <div class="team-entry"><span class="team-years">2018&#8211;2019</span><span class="team-info"><strong>Dr. Sophie Charvet</strong><span class="team-role">Mixotrophic protist ecophysiology, Columbia University.</span></span></div>
     <div class="team-entry"><span class="team-years">2013&#8211;2015</span><span class="team-info"><strong>Dr. Kimberly Popendorf</strong><span class="team-role">Phosphorus cycling in the Gulf of Mexico, Columbia University.</span></span></div>
@@ -369,16 +381,29 @@
     <div class="page-banner-bg" style="background-image:url('images/opportunities-banner.webp');background-position:center 50%"></div>
     <div class="page-banner-overlay"></div>
     <div class="page-banner-content">
-      <div><p class="tag-label">Join Us</p><h2 class="section-heading" style="font-size:32px;margin-bottom:0">Opportunities</h2></div>
+      <div><p class="tag-label">Join Us</p><h1 class="section-heading banner-title" tabindex="-1">Opportunities</h1></div>
     </div>
   </div>
   <div class="section">
     <p style="color:var(--text);font-size:19px;margin-bottom:12px">I welcome inquiries from motivated individuals interested in marine microbiology, phosphorus biogeochemistry, mixotrophy, and astrobiology.</p>
-    <p style="color:var(--dim);font-size:18px;margin-bottom:16px">There are no project-specific vacancies at this time, but I am always open to hearing from potential collaborators at all career stages. If our research themes excite you, <a href="mailto:duhamel@arizona.edu?subject=Duhamel%20Lab%20Inquiry" style="color:var(--accent);font-weight:600">send me an email</a>. You can also <a href="#" onclick="event.preventDefault();document.querySelector('[data-tab=teaching]').click()" style="color:var(--accent);font-weight:600">take a course with me.</a></p>
+    <p class="openings-status" id="openings-status"></p>
+    <div class="before-email">
+      <h2 class="before-email-head">Before you email</h2>
+      <p>To help me reply quickly, please include:</p>
+      <ul>
+        <li>Your CV.</li>
+        <li>Three or four sentences on which of our papers or projects interests you, and why.</li>
+        <li>The program you plan to apply to (for example MCB, EEB or LPL) and your intended start term.</li>
+        <li>Fellowships you are eligible for or have applied to (for example NSF GRFP, NASA FINESST, or University of Arizona fellowships).</li>
+      </ul>
+      <p><a class="btn-mail" href="mailto:duhamel@arizona.edu?subject=Prospective%20student%20%E2%80%93%20%5Bprogram%5D%20%E2%80%93%20%5Bstart%20term%5D">Email Dr. Duhamel</a></p>
+      <p class="mail-hint">Suggested subject line: <span class="mono">Prospective student – [program] – [start term]</span> (or <span class="mono">Prospective postdoc – [topic]</span>). Address: duhamel@arizona.edu</p>
+      <p>Interested in teaching rather than research? <a href="#opportunities" data-goto-tab="oppo-tab-teaching">See the courses I teach</a>.</p>
+    </div>
 
-    <div class="oppo-tabs" id="oppo-tabs">
-      <button class="oppo-tab active" data-tab="research-oppo">Research</button>
-      <button class="oppo-tab" data-tab="teaching">Teaching</button>
+    <div class="oppo-tabs" id="oppo-tabs" role="tablist" aria-label="Opportunity types">
+      <button class="oppo-tab active" type="button" role="tab" data-tab="research-oppo">Research</button>
+      <button class="oppo-tab" type="button" role="tab" id="oppo-tab-teaching" data-tab="teaching">Teaching</button>
     </div>
 
     <div id="panel-research-oppo" class="oppo-panel active">
@@ -389,10 +414,10 @@
       <p style="color:var(--dim);font-size:16px;line-height:1.7;margin-bottom:16px">Graduate students join through the <a href="https://mcb.arizona.edu/graduate-students/prospective-students" target="_blank" rel="noopener noreferrer" style="color:var(--accent-light)">MCB Graduate Program</a>, the <a href="https://eeb.arizona.edu/graduate" target="_blank" rel="noopener noreferrer" style="color:var(--accent-light)">EEB Graduate Program</a>, or the <a href="https://lpl.arizona.edu/admissions" target="_blank" rel="noopener noreferrer" style="color:var(--accent-light)">LPL Graduate Admissions</a>. Please reach out before applying so we can discuss mutual interests.</p>
 
       <h3 class="section-divider">Undergraduate Students</h3>
-      <p style="color:var(--dim);font-size:16px;line-height:1.7;margin-bottom:16px">I regularly mentor undergraduate researchers through independent study and honors thesis projects. Topics can span marine microbiology, astrobiology, flow cytometry, and field research. If you're a UA undergraduate interested in research, so reach out.</p>
+      <p style="color:var(--dim);font-size:16px;line-height:1.7;margin-bottom:16px">I regularly mentor undergraduate researchers through independent study and honors thesis projects. Topics can span marine microbiology, astrobiology, flow cytometry, and field research. If you're a UA undergraduate interested in research, please reach out.</p>
     </div>
 
-    <div id="panel-teaching" class="oppo-panel" style="position:relative">
+    <div id="panel-teaching" class="oppo-panel" style="position:relative" hidden>
       <div style="position:absolute;inset:0;background-image:url('images/teaching-bg.webp');background-size:cover;background-position:center;opacity:0.06;border-radius:6px;pointer-events:none"></div>
       <h3 class="section-divider" style="border-top:none;padding-top:0">University of Arizona</h3>
       <div class="teaching-entry"><strong>MCB 437/537 &#8220;Life in Extreme Environments&#8221;</strong><span class="teaching-years">2020, 2022, 2023, 2024, 2025</span><div class="teaching-detail">3-credit graduate course open to undergraduates. Exploration of extremophile biology, astrobiology, and the limits of life.</div></div>
@@ -412,19 +437,18 @@
 <!-- ===== DATA PAGE ===== -->
 <div id="page-data" class="page" style="display:none">
   <div class="page-banner">
-    <div class="page-banner-bg" style="background-image:url('images/data-banner.webp');background-position:center 35%"></div>
+    <div class="page-banner-bg" style="background-image:url('images/data-banner.webp');background-position:center"></div>
     <div class="page-banner-overlay"></div>
     <div class="page-banner-content">
-      <div><p class="tag-label">Open Access</p><h2 class="section-heading" style="font-size:32px;margin-bottom:0">Data and Resources</h2></div>
+      <div><p class="tag-label">Open Access</p><h1 class="section-heading banner-title" tabindex="-1">Data and Resources</h1></div>
     </div>
   </div>
   <div class="section">
     <p class="section-sub">Publicly available datasets and selected media and outreach.</p>
     <div class="data-tabs" id="data-tabs" role="tablist" aria-label="Data sections">
-      <button class="data-tab active" data-tab="datasets">Datasets</button>
-      <button class="data-tab" data-tab="media">Media &amp; Outreach</button>
-      <button class="data-tab" data-tab="gallery">Gallery</button>
-      <button class="data-tab" data-tab="analytics">Analytics</button>
+      <button class="data-tab active" type="button" role="tab" data-tab="datasets">Datasets</button>
+      <button class="data-tab" type="button" role="tab" data-tab="media">Media &amp; Outreach</button>
+      <button class="data-tab" type="button" role="tab" data-tab="gallery">Gallery</button>
     </div>
     <div id="tab-datasets" class="data-tab-panel active">
       <div id="datasets-list"></div>
@@ -440,15 +464,9 @@
         <div class="gallery-item"><img src="images/gallery-4.webp" alt="Field research" loading="lazy"><div class="gallery-caption">Field research</div></div>
       </div>
     </div>
-    <div id="tab-analytics" class="data-tab-panel">
-      <p class="section-sub" style="margin-bottom:16px">Website visitor statistics.</p>
-      <p style="color:var(--dim);font-size:16px;margin-bottom:20px">Visitor analytics for solangeduhamel.com. Data is collected using privacy-friendly, cookie-free tracking.</p>
-      <div id="analytics-embed" style="background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:24px;min-height:200px;display:flex;align-items:center;justify-content:center">
-        <p style="color:var(--muted);font-size:14px;font-family:var(--mono);text-align:center">Analytics dashboard will appear here once tracking is configured.<br>Recommended: <a href="https://www.goatcounter.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent-light)">GoatCounter</a> (free, no cookies, GDPR-friendly)</p>
-      </div>
-    </div>
   </div>
-</div> 
+</div>
+</main>
 
 <button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">&#9650;</button>
 
@@ -460,7 +478,7 @@
     </div>
     <div>
       <h4 class="footer-heading">Contact</h4>
-      <p class="footer-contact">duhamel@arizona.edu</p>
+      <p class="footer-contact"><a href="mailto:duhamel@arizona.edu">duhamel@arizona.edu</a></p>
       <p class="footer-contact-addr">Department of Molecular &amp; Cellular Biology<br>University of Arizona<br>1007 E. Lowell Street<br>Tucson, AZ 85721 USA</p>
     </div>
     <div>
@@ -473,332 +491,8 @@
       <a href="#data" class="footer-link" data-page="data">Data and Resources</a>
     </div>
   </div>
-  <div class="footer-bottom">Copyright 2026 Solange Duhamel &#8212; solangeduhamel.com</div>
+  <div class="footer-bottom">Copyright 2026 Solange Duhamel &#8212; solangeduhamel.com <span class="site-updated" id="site-updated"></span></div>
 </footer>
 
-<script>
-/* ===== NAVIGATION & ROUTING ===== */
-function highlightAuthor(text){
-  const patterns=['Duhamel, S.','S. Duhamel','Duhamel S.','Duhamel, S','Duhamel S'];
-  let r=text;
-  patterns.forEach(p=>{r=r.replace(new RegExp(p.replace(/\./g,'\\.').replace(/,/g,'\\,'),'g'),'<strong style="color:var(--text);font-weight:600">'+p+'</strong>')});
-  return r;
-}
-function isFirstAuthor(a){const l=a.toLowerCase();return l.startsWith('duhamel, s')||l.startsWith('duhamel s')||l.startsWith('s. duhamel')}
-
-const pages=document.querySelectorAll('.page');
-const navLinks=document.querySelectorAll('[data-page]');
-
-function showPage(id){
-  pages.forEach(p=>p.style.display='none');
-  const target=document.getElementById('page-'+id);
-  if(target)target.style.display='block';
-  navLinks.forEach(l=>{
-    const isActive=l.dataset.page===id;
-    l.classList.toggle('active',isActive);
-    if(isActive)l.setAttribute('aria-current','page');
-    else l.removeAttribute('aria-current');
-  });
-  window.scrollTo(0,0);
-  const mm=document.getElementById('mobile-menu');
-  if(mm)mm.classList.remove('open');
-}
-
-function handleHash(){
-  const h=location.hash.replace('#','').replace(/\?.*/,'')||'home';
-  showPage(h);
-}
-window.addEventListener('hashchange',handleHash);
-window.addEventListener('load',()=>{handleHash();initSite()});
-
-/* Click handlers for all nav links — essential for iframe/preview contexts */
-document.addEventListener('click',function(e){
-  const link=e.target.closest('[data-page]');
-  if(link){
-    e.preventDefault();
-    const pg=link.dataset.page;
-    showPage(pg);
-    try{history.replaceState(null,null,'#'+pg)}catch(e){}
-  }
-});
-
-document.getElementById('hamburger').addEventListener('click',()=>{
-  document.getElementById('mobile-menu').classList.toggle('open');
-});
-
-/* Progress bar + Parallax (debounced via rAF) */
-let scrollTicking=false;
-window.addEventListener('scroll',()=>{
-  if(!scrollTicking){
-    requestAnimationFrame(()=>{
-      const h=document.documentElement.scrollHeight-window.innerHeight;
-      const pct=h>0?(window.scrollY/h)*100:0;
-      document.getElementById('progress-bar').style.width=pct+'%';
-      const btn=document.getElementById('back-to-top');
-      btn.classList.toggle('visible',window.scrollY>400);
-
-      /* Parallax: shift backgrounds at 30% scroll speed */
-      const scrollY=window.scrollY;
-      document.querySelectorAll('.hero-bg').forEach(el=>{
-        el.style.transform='translateY('+scrollY*0.3+'px)';
-      });
-      document.querySelectorAll('.page-banner-bg:not(.no-parallax), .parallax-bg').forEach(el=>{
-        const rect=el.parentElement.getBoundingClientRect();
-        const offset=(rect.top+rect.height/2)*-0.15;
-        el.style.transform='translateY('+offset+'px)';
-      });
-      scrollTicking=false;
-    });
-    scrollTicking=true;
-  }
-});
-document.getElementById('back-to-top').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-/* ===== RENDER FUNCTIONS ===== */
-function initSite(){
-  renderLatest();
-  renderResearch();
-  renderPubs();
-  renderDatasets();
-  renderBookChapters();
-  renderPreprints();
-  renderOutreach();
-  renderPubSummary();
-  renderMedia();
-  initTabs();
-  initFilters();
-  initPortraitCycle();
-}
-
-/* Portrait cycling */
-const profilePhotos=['images/profile-1.webp','images/profile-2.webp','images/profile-3.webp','images/profile-4.webp'];
-let profileIdx=0;
-function initPortraitCycle(){
-  setInterval(()=>{
-    profileIdx=(profileIdx+1)%profilePhotos.length;
-    const src=profilePhotos[profileIdx];
-    document.querySelectorAll('#hero-portrait img, #about-portrait img').forEach(img=>{
-      img.style.opacity='0';
-      setTimeout(()=>{img.src=src;img.style.opacity='1'},400);
-    });
-  },20000);
-  // Add transition to portrait images
-  document.querySelectorAll('#hero-portrait img, #about-portrait img').forEach(img=>{
-    img.style.transition='opacity 0.4s ease';
-  });
-}
-
-const latestItems=[
-  {href:"https://doi.org/10.1093/ismejo/wrag285",src:"ISME Journal, 2026",t:"Phosphorus limitation shifts cellular P allocation toward polyphosphate in Synechococcus",a:"Filella, A., Segura-Noguera, M., Gomez-Buckley, A., Carini, P., Diaz, J.M., and S. Duhamel"},
-  {href:"https://doi.org/10.1038/s41597-026-07868-y",src:"Scientific Data, 2026",t:"A global oceanic dataset of dissolved organophosphate esters",a:"Waggoner, E.M., Frost, C., and S. Duhamel"},
-  {href:"https://doi.org/10.1016/j.scitotenv.2026.181659",src:"Sci Total Environ, 2026",t:"Microbial dispersal from a hyperactive sandsheet in the Icelandic Highland",a:"Hadland, N.K., Hamilton, C.W., Schroedl, P., Calabrese, F., Marlow, J., and S. Duhamel"},
-  {href:"https://doi.org/10.1038/s42003-025-09044-1",src:"Comms Biology, 2025",t:"Three eruptions at Fagradalsfjall show rapid microbial community establishment",a:"Hadland, N.K., Hamilton, C.W., Björnsdóttir, S.H., and S. Duhamel"},
-  {href:"https://doi.org/10.1038/s41579-024-01119-w",src:"Nature Reviews Microbiology, 2025",t:"The microbial phosphorus cycle in aquatic ecosystems",a:"Duhamel, S."},
-  {href:"https://doi.org/10.1093/femsec/fiae099",src:"FEMS Microbiol Ecol, 2024",t:"Dissolved organic phosphorus utilization by marine Synechococcus",a:"Waggoner, E.M., Diaz, J.M., Djaoudi, K., and S. Duhamel"}
-];
-
-function renderLatest(){
-  const g=document.getElementById('latest-grid');
-  if(!g)return;
-  g.innerHTML=latestItems.map(it=>`<a class="latest-card" href="${it.href}" target="_blank" rel="noopener noreferrer"><div class="lc-source">${it.src}</div><div class="lc-title">${it.t}</div><div class="lc-authors">${highlightAuthor(it.a)}</div></a>`).join('');
-}
-
-function renderResearch(){
-  const ap=document.getElementById('active-projects');
-  const cp=document.getElementById('completed-projects');
-  if(!ap||!cp)return;
-  const renderCard=(p)=>{
-    const badge=p.role==='PI'?'pi':p.role==='Co-PI'||p.role==='Co-I'?'coi':'collab';
-    return`<div class="research-card"><h4>${p.t}<span class="role-badge ${badge}">${p.role}</span></h4><div class="rc-role">${p.funder} &middot; ${p.years}</div><p>${p.desc}</p></div>`;
-  };
-  ap.innerHTML=activeProjects.map(renderCard).join('');
-  cp.innerHTML=completedProjects.map(renderCard).join('');
-}
-
-function renderPubs(){
-  renderPubList(pubs);
-  renderChart(pubs);
-}
-
-function renderPubList(list){
-  const el=document.getElementById('pub-list');
-  if(!el)return;
-  el.innerHTML=list.map(p=>{
-    const doiLink=p.doi?`<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener noreferrer">${p.t}</a>`:p.t;
-    const tags=p.tags.map(t=>`<span class="pub-tag">${t}</span>`).join('');
-    const invitedMark=p.tags.includes('invited')?'<span class="pub-tag" style="background:rgba(249,168,212,0.1);color:var(--accent-warm);border-color:rgba(249,168,212,0.2)">Invited</span>':'';
-    const cofirstMark=p.cofirst?'<span class="co-first-mark" title="Co-first author">&#8224;</span>':'';
-    return`<div class="pub-entry" data-tags="${p.tags.join(',')}" data-year="${p.y}"><div class="pub-year">${p.y}</div><div class="pub-title">${doiLink}${cofirstMark}</div><div class="pub-authors">${highlightAuthor(p.a)}</div><div class="pub-journal">${p.j}</div><div class="pub-tags">${tags}${invitedMark}</div></div>`;
-  }).join('');
-  document.getElementById('pub-count').textContent=`Showing ${list.length} publications`;
-}
-
-function renderChart(list){
-  const el=document.getElementById('pub-chart');
-  if(!el)return;
-  const years={};
-  list.forEach(p=>{years[p.y]=(years[p.y]||0)+1});
-  const minY=Math.min(...Object.keys(years).map(Number));
-  const maxY=Math.max(...Object.keys(years).map(Number));
-  const maxN=Math.max(...Object.values(years));
-  const span=maxY-minY+1;
-  let html='';
-  for(let y=minY;y<=maxY;y++){
-    const n=years[y]||0;
-    const h=maxN>0?(n/maxN)*100:0;
-    html+=`<div class="chart-bar" style="height:${Math.max(h,2)}%"><div class="chart-tooltip">${y}: ${n}</div></div>`;
-  }
-  el.innerHTML=html;
-}
-
-function initFilters(){
-  document.querySelectorAll('.filter-chip').forEach(chip=>{
-    chip.addEventListener('click',()=>{
-      document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
-      chip.classList.add('active');
-      const f=chip.dataset.filter;
-      const filtered=f==='all'?pubs:pubs.filter(p=>p.tags.includes(f));
-      renderPubList(filtered);
-      renderChart(filtered);
-    });
-  });
-  const searchEl=document.getElementById('pub-search');
-  if(searchEl){
-    searchEl.addEventListener('input',()=>{
-      const q=searchEl.value.toLowerCase();
-      const filtered=q?pubs.filter(p=>(p.t+' '+p.a+' '+p.j+' '+p.y).toLowerCase().includes(q)):pubs;
-      renderPubList(filtered);
-      renderChart(filtered);
-      document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
-      if(!q)document.querySelector('[data-filter="all"]').classList.add('active');
-    });
-  }
-}
-
-function renderDatasets(){
-  const el=document.getElementById('datasets-list');
-  if(!el)return;
-  el.innerHTML=datasets.map(d=>`<div class="dataset-card"><h4>${d.t}</h4><p>${d.a} &middot; ${d.repo} &middot; ${d.y}</p><a href="${d.h}" target="_blank" rel="noopener noreferrer" style="font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:6px;display:inline-block">View &#8599;</a></div>`).join('');
-}
-
-function renderBookChapters(){
-  const el=document.getElementById('pub-bookchapters-list');
-  if(!el)return;
-  el.innerHTML=bookChapters.map(b=>{
-    const link=b.doi?`<a href="https://doi.org/${b.doi}" target="_blank" rel="noopener noreferrer">${b.t}</a>`:b.t;
-    return`<div class="wp-card"><div class="pub-year">${b.y}</div><h4>${link}</h4><p>${highlightAuthor(b.a)}<br><em>${b.j}</em></p></div>`;
-  }).join('');
-}
-
-function renderPubSummary(){
-  const el=document.getElementById('pub-summary');
-  if(!el)return;
-  const n=(k,one,many)=>`${k} ${k===1?one:many}`;
-  el.textContent=`${n(pubs.length,'peer-reviewed article','peer-reviewed articles')}, ${n(preprints.length,'preprint','preprints')}, ${n(bookChapters.length,'book chapter','book chapters')}, and ${n(outreach.length,'outreach article','outreach articles')}.`;
-}
-
-function renderPreprints(){
-  const el=document.getElementById('pub-preprints-list');
-  if(!el)return;
-  if(!preprints.length){el.innerHTML='<p style="color:var(--dim)">No preprints at the moment.</p>';return;}
-  el.innerHTML=preprints.map((p,i)=>{
-    const link=`<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener noreferrer">${p.t}</a>`;
-    return`<div class="wp-card" id="preprint-${i}"><div class="pub-year">${p.y}</div><h4>${link}</h4><p>${highlightAuthor(p.a)}<br><em>${p.j}</em> &middot; <span class="pub-tag">Preprint</span></p><div class="preprint-status"></div></div>`;
-  }).join('');
-  /* Ask Crossref whether each preprint has been published in a journal yet */
-  const known=new Set(pubs.map(p=>(p.doi||'').toLowerCase()));
-  preprints.forEach((p,i)=>{
-    fetch(`https://api.crossref.org/works/${encodeURIComponent(p.doi)}`).then(r=>r.ok?r.json():null).then(d=>{
-      const rel=d&&d.message&&d.message.relation&&d.message.relation['is-preprint-of'];
-      if(!rel||!rel.length)return;
-      const pubDoi=rel[0].id;
-      const card=document.getElementById('preprint-'+i);
-      if(!card)return;
-      if(known.has(pubDoi.toLowerCase())){card.remove();return;}
-      return fetch(`https://api.crossref.org/works/${encodeURIComponent(pubDoi)}`).then(r=>r.ok?r.json():null).then(j=>{
-        const m=j&&j.message; const journal=m&&m['container-title']&&m['container-title'][0]||'a journal';
-        const yr=m&&(m.published||m.issued)&&(m.published||m.issued)['date-parts'][0][0]||'';
-        card.querySelector('.preprint-status').innerHTML=`<span class="pub-tag" style="background:rgba(56,189,248,0.12);color:var(--accent)">Now published</span> <a href="https://doi.org/${pubDoi}" target="_blank" rel="noopener noreferrer">${journal}${yr?', '+yr:''} &#8599;</a>`;
-      });
-    }).catch(()=>{});
-  });
-}
-
-function renderOutreach(){
-  const el=document.getElementById('pub-outreach-list');
-  if(!el)return;
-  el.innerHTML=outreach.map(o=>{
-    const link=o.url?`<a href="${o.url}" target="_blank" rel="noopener noreferrer">${o.t}</a>`:o.t;
-    const lang=o.lang?` &middot; <span class="pub-tag">${o.lang}</span>`:'';
-    return`<div class="wp-card"><div class="pub-year">${o.y}</div><h4>${link}</h4><p>${highlightAuthor(o.a)}<br><em>${o.j}</em>${lang}</p></div>`;
-  }).join('');
-}
-
-function renderMedia(){
-  const el=document.getElementById('media-list');
-  if(!el)return;
-  el.innerHTML=media.map(m=>`<div class="media-card"><div class="media-outlet">${m.o}</div><h4>${m.t}</h4>${m.h?`<a href="${m.h}" target="_blank" rel="noopener noreferrer" style="font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:6px;display:inline-block">View &#8599;</a>`:''}</div>`).join('');
-}
-
-/* ===== TABS ===== */
-function initTabs(){
-  // Generic tab keyboard navigation (arrow keys)
-  function setupTabKeys(container){
-    const tabs=container.querySelectorAll('[class*="-tab"]');
-    tabs.forEach((tab,i)=>{
-      tab.setAttribute('role','tab');
-      tab.addEventListener('keydown',e=>{
-        let target;
-        if(e.key==='ArrowRight'||e.key==='ArrowDown')target=tabs[(i+1)%tabs.length];
-        else if(e.key==='ArrowLeft'||e.key==='ArrowUp')target=tabs[(i-1+tabs.length)%tabs.length];
-        if(target){e.preventDefault();target.focus();target.click();}
-      });
-    });
-  }
-
-  // Publication tabs (Articles / Book Chapters)
-  document.querySelectorAll('#pub-tabs .data-tab').forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      document.querySelectorAll('#pub-tabs .data-tab').forEach(t=>t.classList.remove('active'));
-      tab.classList.add('active');
-      document.querySelectorAll('.pub-tab-panel').forEach(p=>p.style.display='none');
-      const target=document.getElementById('pub-panel-'+tab.dataset.pubtab);
-      if(target)target.style.display='block';
-    });
-  });
-  // Team tabs
-  document.querySelectorAll('#team-tabs .team-tab').forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      document.querySelectorAll('#team-tabs .team-tab').forEach(t=>t.classList.remove('active'));
-      tab.classList.add('active');
-      document.querySelectorAll('.team-panel').forEach(p=>p.classList.remove('active'));
-      document.getElementById('team-'+tab.dataset.tab).classList.add('active');
-    });
-  });
-  // Opportunities tabs
-  document.querySelectorAll('#oppo-tabs .oppo-tab').forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      document.querySelectorAll('#oppo-tabs .oppo-tab').forEach(t=>t.classList.remove('active'));
-      tab.classList.add('active');
-      document.querySelectorAll('.oppo-panel').forEach(p=>p.classList.remove('active'));
-      document.getElementById('panel-'+tab.dataset.tab).classList.add('active');
-    });
-  });
-  // Data tabs
-  document.querySelectorAll('#data-tabs .data-tab').forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      document.querySelectorAll('#data-tabs .data-tab').forEach(t=>t.classList.remove('active'));
-      tab.classList.add('active');
-      document.querySelectorAll('.data-tab-panel').forEach(p=>p.classList.remove('active'));
-      document.getElementById('tab-'+tab.dataset.tab).classList.add('active');
-    });
-  });
-  // Setup keyboard navigation for all tab groups
-  ['pub-tabs','team-tabs','oppo-tabs','data-tabs'].forEach(id=>{
-    const el=document.getElementById(id);
-    if(el)setupTabKeys(el);
-  });
-}
-</script>
 </body>
 </html>
