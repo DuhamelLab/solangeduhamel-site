@@ -1,0 +1,38 @@
+name: Check site data
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 13 * * 1'   # Mondays, after the weekly update agent
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate js/data.js
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check data format, DOIs, tags, dates and image sizes
+        run: node scripts/validate-data.mjs
+      - name: Check JavaScript syntax
+        run: node --check js/data.js && node --check js/app.js
+
+  links:
+    name: Check links (report only)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links in the page and data
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --max-concurrency 4 --accept 200,201,202,204,206,301,302,303,307,308,403,429 --exclude-mail index.html js/data.js
+          fail: false
