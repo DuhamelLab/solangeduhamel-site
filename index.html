@@ -262,7 +262,7 @@
       <button class="data-tab active" data-pubtab="articles">Peer-Reviewed Articles</button>
       <button class="data-tab" data-pubtab="preprints">Preprints</button>
       <button class="data-tab" data-pubtab="bookchapters">Book Chapters</button>
-      <button class="data-tab" data-pubtab="outreach">Outreach</button>
+      <button class="data-tab" data-pubtab="outreach">Outreach Articles</button>
     </div>
     <div id="pub-panel-articles" class="pub-tab-panel">
     <div class="pub-search-row">
@@ -732,7 +732,7 @@ function renderOutreach(){
 function renderMedia(){
   const el=document.getElementById('media-list');
   if(!el)return;
-  el.innerHTML=media.map(m=>`<div class="media-card"><div class="media-outlet">${m.o}</div><h4>${m.t}</h4><a href="${m.h}" target="_blank" rel="noopener noreferrer" style="font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:6px;display:inline-block">View &#8599;</a></div>`).join('');
+  el.innerHTML=media.map(m=>`<div class="media-card"><div class="media-outlet">${m.o}</div><h4>${m.t}</h4>${m.h?`<a href="${m.h}" target="_blank" rel="noopener noreferrer" style="font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:6px;display:inline-block">View &#8599;</a>`:''}</div>`).join('');
 }
 
 /* ===== TABS ===== */

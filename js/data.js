@@ -108,6 +108,7 @@ const preprints = [
 ];
 
 const outreach = [
+  {y:2021,t:"How microbes in Iceland can teach us about possible life on Mars?",a:"Duhamel, S., and C.W. Hamilton",j:"Futurum Careers, Issue 7: 22–25. ISSN 2632-8380",lang:"",url:"https://doi.org/10.33424/FUTURUM112"},
   {y:2006,t:"Les virus planctoniques : un compartiment biologique clé des milieux aquatiques",a:"Personnic, S., Duhamel, S., Bettarel, Y., Sime-Ngando, T., and S. Jacquet",j:"Le Courrier de l'Environnement de l'INRA, 53: 19–34",lang:"French",url:""},
   {y:2005,t:"Importance des virus en milieu lacustre",a:"Duhamel, S., Personnic, S., and S. Jacquet",j:"INRA Mensuel",lang:"French",url:"https://academiccommons.columbia.edu/doi/10.7916/d8-n1he-rh90"}
 ];
@@ -121,6 +122,8 @@ const datasets = [
 const media = [
   {o:"Telly Award, 2022",t:"Fagradalsfjall eruption research video",h:"https://www.youtube.com/watch?v=aJwZFWRf0DM"},
   {o:"Futurum Careers, 2021",t:"How microbes in Iceland can teach us about possible life on Mars",h:"https://doi.org/10.33424/FUTURUM112"},
-  {o:"Earth2Class, 2021",t:"Researching a vital element for life: microbial phosphorus metabolism in the ocean",h:"https://earth2class.org/site/?p=17157"},
-  {o:"Intrepid Museum Youth Summit, 2021",t:"Marine microbes outreach video",h:"https://www.youtube.com/watch?v=eLSIGFP-Hm8"}
+  {o:"Earth2Class teacher workshop, 2021",t:"Researching a vital element for life: microbial phosphorus metabolism in the ocean (with J.M. Diaz)",h:"https://web.archive.org/web/20240604221305/https://earth2class.org/site/?p=17157"},
+  {o:"Intrepid Museum Youth Summit, 2021",t:"Marine microbes outreach video",h:"https://www.youtube.com/watch?v=eLSIGFP-Hm8"},
+  {o:"Le Courrier de l'Environnement de l'INRA, 2006",t:"Les virus planctoniques : un compartiment biologique clé des milieux aquatiques (in French)",h:""},
+  {o:"INRA Mensuel, 2005",t:"Importance des virus en milieu lacustre (in French)",h:"https://academiccommons.columbia.edu/doi/10.7916/d8-n1he-rh90"}
 ];
