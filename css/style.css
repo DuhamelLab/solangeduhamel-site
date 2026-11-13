@@ -347,7 +347,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,.has-pubs:focus-visible
 
 /* Minimum 44px touch targets for mobile */
 .nav-hamburger{min-width:44px;min-height:44px;display:none;align-items:center;justify-content:center}
-@media(max-width:768px){.nav-hamburger{display:flex}}
+.nav-logo,.nav-links a{white-space:nowrap}
+.preprint-status{margin-top:8px;font-size:14px}
+/* Top menu needs ~925px on one line; below that, use the ☰ menu */
+@media(max-width:960px){.nav-links{display:none}.nav-hamburger{display:flex}.mobile-menu.open{display:block}}
 .mobile-menu a{min-height:44px;display:flex;align-items:center}
 .filter-chip{min-height:36px;display:inline-flex;align-items:center}
 .data-tab,.team-tab,.oppo-tab{min-height:44px}

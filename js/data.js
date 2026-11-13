@@ -19,6 +19,7 @@ const completedProjects = [
 ];
 
 const pubs = [
+  {n:70,y:2026,t:"Phosphorus limitation shifts cellular phosphorus allocation toward polyphosphate by depleting other phosphorus pools in Synechococcus",a:"Duhamel, S., Filella, A., Segura-Noguera, M., Gomez-Buckley, A., Carini, P., and J.M. Diaz",j:"The ISME Journal, wrag285",doi:"10.1093/ismejo/wrag285",tags:["phosphorus","first"]},
   {n:69,y:2025,t:"Three eruptions at the Fagradalsfjall Volcano in Iceland show rapid and predictable microbial community establishment",a:"Hadland, N.K., Hamilton, C.W., Björnsdóttir, S.H., and S. Duhamel",j:"Communications Biology, 8: 1657",doi:"10.1038/s42003-025-09044-1",tags:["astrobiology","student"]},
   {n:68,y:2025,t:"The microbial phosphorus cycle in aquatic ecosystems",a:"Duhamel, S.",j:"Nature Reviews Microbiology, 1–17",doi:"10.1038/s41579-024-01119-w",tags:["phosphorus","first","invited"]},
   {n:67,y:2024,t:"Adaptive responses of cyanobacteria to phosphate limitation: a focus on marine diazotrophs",a:"Caille, C., Duhamel, S., Latifi, A., and S. Rabouille",j:"Environmental Microbiology, 26(12), e70023",doi:"10.1111/1462-2920.70023",tags:["phosphorus"]},
@@ -96,6 +97,19 @@ const bookChapters = [
   {y:2019,t:"Phosphorus Along the Soil-Freshwater-Ocean Continuum (Editorial)",a:"Cade-Menun, B., Duhamel, S., et al.",j:"Frontiers in Marine Science, Volume 6, Issue 28",doi:""},
   {y:2017,t:"Phosphorus Limitation, Uptake, and Turnover in Benthic Stream Algae",a:"Steinman, A.D., and S. Duhamel",j:"Methods in Stream Ecology (Third Edition), Academic Press, pp 197–218",doi:""},
   {y:2011,t:"Analysis of Phosphatase Activity from Aquatic Heterotrophic Bacteria at the Single Cell Level by Flow Cytometry",a:"Grégori, G., Denis, M., Duhamel, S., and F. Wambeke",j:"Global Change: Mankind-Marine Environment Interactions, Springer, pp 255–258",doi:"10.1007/978-90-481-8630-3_44"}
+];
+
+// Preprints: the site checks Crossref when the page loads. Once a preprint is
+// published, its card switches to "Now published" with a link to the journal
+// version. When the published paper is added to `pubs` above, the preprint
+// card hides itself automatically (matched by DOI).
+const preprints = [
+  {y:2026,t:"Compositional heterogeneity structures microbial microhabitats across distinct mineral substrates",a:"Calabrese, F., Schroedl, P., Hadland, N., Yu, J., McClelland, A., Colella, N., Jakubek, R.S., Ellison, E., Mayhew, L., Duhamel, S., LaRowe, D.E., Graham, H.V., Regberg, A.B., and J.J. Marlow",j:"bioRxiv",doi:"10.64898/2026.07.31.742068"}
+];
+
+const outreach = [
+  {y:2006,t:"Les virus planctoniques : un compartiment biologique clé des milieux aquatiques",a:"Personnic, S., Duhamel, S., Bettarel, Y., Sime-Ngando, T., and S. Jacquet",j:"Le Courrier de l'Environnement de l'INRA, 53: 19–34",lang:"French",url:""},
+  {y:2005,t:"Importance des virus en milieu lacustre",a:"Duhamel, S., Personnic, S., and S. Jacquet",j:"INRA Mensuel",lang:"French",url:"https://academiccommons.columbia.edu/doi/10.7916/d8-n1he-rh90"}
 ];
 
 const datasets = [

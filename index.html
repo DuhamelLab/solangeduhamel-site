@@ -257,10 +257,12 @@
     </div>
   </div>
   <div class="section">
-    <p class="section-sub">69 peer-reviewed articles and 5 book chapters.</p>
+    <p class="section-sub" id="pub-summary">70 peer-reviewed articles, 1 preprint, 5 book chapters, and 2 outreach articles.</p>
     <div class="data-tabs" id="pub-tabs" role="tablist" aria-label="Publication types" style="margin-bottom:24px">
       <button class="data-tab active" data-pubtab="articles">Peer-Reviewed Articles</button>
+      <button class="data-tab" data-pubtab="preprints">Preprints</button>
       <button class="data-tab" data-pubtab="bookchapters">Book Chapters</button>
+      <button class="data-tab" data-pubtab="outreach">Outreach</button>
     </div>
     <div id="pub-panel-articles" class="pub-tab-panel">
     <div class="pub-search-row">
@@ -282,13 +284,21 @@
       <button class="filter-chip" data-filter="marine">Marine</button>
       <button class="filter-chip" data-filter="methods">Methods</button>
     </div>
-    <p class="pub-count" id="pub-count">Showing 69 publications</p>
+    <p class="pub-count" id="pub-count">Showing 70 publications</p>
     <div id="pub-chart" class="chart-container"></div>
     <div id="pub-list"></div>
     </div><!-- end pub-panel-articles -->
     <div id="pub-panel-bookchapters" class="pub-tab-panel" style="display:none">
       <p style="color:var(--dim);font-size:16px;margin-bottom:20px">5 book chapters and edited volumes.</p>
       <div id="pub-bookchapters-list"></div>
+    </div>
+    <div id="pub-panel-preprints" class="pub-tab-panel" style="display:none">
+      <p style="color:var(--dim);font-size:16px;margin-bottom:20px">Manuscripts posted ahead of peer review. Each entry links to its published version once it appears.</p>
+      <div id="pub-preprints-list"></div>
+    </div>
+    <div id="pub-panel-outreach" class="pub-tab-panel" style="display:none">
+      <p style="color:var(--dim);font-size:16px;margin-bottom:20px">Articles written for general and professional audiences.</p>
+      <div id="pub-outreach-list"></div>
     </div>
   </div>
 </div>
@@ -546,6 +556,9 @@ function initSite(){
   renderPubs();
   renderDatasets();
   renderBookChapters();
+  renderPreprints();
+  renderOutreach();
+  renderPubSummary();
   renderMedia();
   initTabs();
   initFilters();
@@ -571,12 +584,12 @@ function initPortraitCycle(){
 }
 
 const latestItems=[
+  {href:"https://doi.org/10.1093/ismejo/wrag285",src:"ISME Journal, 2026",t:"Phosphorus limitation shifts cellular P allocation toward polyphosphate in Synechococcus",a:"Duhamel, S., Filella, A., Segura-Noguera, M., Gomez-Buckley, A., Carini, P., and J.M. Diaz"},
   {href:"https://doi.org/10.1038/s42003-025-09044-1",src:"Comms Biology, 2025",t:"Three eruptions at Fagradalsfjall show rapid microbial community establishment",a:"Hadland, N.K., Hamilton, C.W., Björnsdóttir, S.H., and S. Duhamel"},
   {href:"https://doi.org/10.1038/s41579-024-01119-w",src:"Nature Reviews Microbiology, 2025",t:"The microbial phosphorus cycle in aquatic ecosystems",a:"Duhamel, S."},
   {href:"https://doi.org/10.1093/femsec/fiae099",src:"FEMS Microbiol Ecol, 2024",t:"Dissolved organic phosphorus utilization by marine Synechococcus",a:"Waggoner, E.M., Diaz, J.M., Djaoudi, K., and S. Duhamel"},
   {href:"https://doi.org/10.1093/ismeco/ycae083",src:"ISME Comms, 2024",t:"Transcriptomics reveal a unique phago-mixotrophic response in Pterosperma cristatum",a:"Charvet, S., Bock, N.A., Kim, E., and S. Duhamel"},
-  {href:"https://doi.org/10.1038/s43247-024-01280-3",src:"Nature Comms Earth & Env, 2024",t:"Young volcanic terrains are windows into early microbial colonization",a:"Hadland, N.K., Hamilton, C.W., and S. Duhamel"},
-  {href:"https://doi.org/10.1038/s41598-024-58044-4",src:"Scientific Reports, 2024",t:"Surface nitrate and phosphate variation in the northern Gulf of Mexico over 35 years",a:"Acosta, K., Juhl, A., Subramaniam, A., and S. Duhamel"}
+  {href:"https://doi.org/10.1038/s43247-024-01280-3",src:"Nature Comms Earth & Env, 2024",t:"Young volcanic terrains are windows into early microbial colonization",a:"Hadland, N.K., Hamilton, C.W., and S. Duhamel"}
 ];
 
 function renderLatest(){
@@ -669,6 +682,50 @@ function renderBookChapters(){
   el.innerHTML=bookChapters.map(b=>{
     const link=b.doi?`<a href="https://doi.org/${b.doi}" target="_blank" rel="noopener noreferrer">${b.t}</a>`:b.t;
     return`<div class="wp-card"><div class="pub-year">${b.y}</div><h4>${link}</h4><p>${highlightAuthor(b.a)}<br><em>${b.j}</em></p></div>`;
+  }).join('');
+}
+
+function renderPubSummary(){
+  const el=document.getElementById('pub-summary');
+  if(!el)return;
+  const n=(k,one,many)=>`${k} ${k===1?one:many}`;
+  el.textContent=`${n(pubs.length,'peer-reviewed article','peer-reviewed articles')}, ${n(preprints.length,'preprint','preprints')}, ${n(bookChapters.length,'book chapter','book chapters')}, and ${n(outreach.length,'outreach article','outreach articles')}.`;
+}
+
+function renderPreprints(){
+  const el=document.getElementById('pub-preprints-list');
+  if(!el)return;
+  if(!preprints.length){el.innerHTML='<p style="color:var(--dim)">No preprints at the moment.</p>';return;}
+  el.innerHTML=preprints.map((p,i)=>{
+    const link=`<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener noreferrer">${p.t}</a>`;
+    return`<div class="wp-card" id="preprint-${i}"><div class="pub-year">${p.y}</div><h4>${link}</h4><p>${highlightAuthor(p.a)}<br><em>${p.j}</em> &middot; <span class="pub-tag">Preprint</span></p><div class="preprint-status"></div></div>`;
+  }).join('');
+  /* Ask Crossref whether each preprint has been published in a journal yet */
+  const known=new Set(pubs.map(p=>(p.doi||'').toLowerCase()));
+  preprints.forEach((p,i)=>{
+    fetch(`https://api.crossref.org/works/${encodeURIComponent(p.doi)}`).then(r=>r.ok?r.json():null).then(d=>{
+      const rel=d&&d.message&&d.message.relation&&d.message.relation['is-preprint-of'];
+      if(!rel||!rel.length)return;
+      const pubDoi=rel[0].id;
+      const card=document.getElementById('preprint-'+i);
+      if(!card)return;
+      if(known.has(pubDoi.toLowerCase())){card.remove();return;}
+      return fetch(`https://api.crossref.org/works/${encodeURIComponent(pubDoi)}`).then(r=>r.ok?r.json():null).then(j=>{
+        const m=j&&j.message; const journal=m&&m['container-title']&&m['container-title'][0]||'a journal';
+        const yr=m&&(m.published||m.issued)&&(m.published||m.issued)['date-parts'][0][0]||'';
+        card.querySelector('.preprint-status').innerHTML=`<span class="pub-tag" style="background:rgba(56,189,248,0.12);color:var(--accent)">Now published</span> <a href="https://doi.org/${pubDoi}" target="_blank" rel="noopener noreferrer">${journal}${yr?', '+yr:''} &#8599;</a>`;
+      });
+    }).catch(()=>{});
+  });
+}
+
+function renderOutreach(){
+  const el=document.getElementById('pub-outreach-list');
+  if(!el)return;
+  el.innerHTML=outreach.map(o=>{
+    const link=o.url?`<a href="${o.url}" target="_blank" rel="noopener noreferrer">${o.t}</a>`:o.t;
+    const lang=o.lang?` &middot; <span class="pub-tag">${o.lang}</span>`:'';
+    return`<div class="wp-card"><div class="pub-year">${o.y}</div><h4>${link}</h4><p>${highlightAuthor(o.a)}<br><em>${o.j}</em>${lang}</p></div>`;
   }).join('');
 }
 
