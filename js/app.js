@@ -431,7 +431,7 @@ function renderFieldwork() {
       `<dl class="fw-dl"><dt>Our work</dt><dd>${rich(f.role)}</dd><dt>${sea ? 'Chief scientist' : 'Collaborators'}</dt><dd>${esc(partners)}</dd>` +
       `<dt>Lab members</dt><dd>${rich(f.team)}</dd></dl>${f.link ? ext(f.link, 'More about this expedition ↗', 'view-link') : ''}</div>` +
       (vid ? `<figure class="fw-photo fw-video"><video controls preload="none" playsinline width="960" height="540"${localSrc(f.poster) ? ` poster="${localSrc(f.poster)}"` : ''} aria-label="${esc(f.videoTitle || 'Video')}"><source src="${vid}" type="video/mp4"></video><figcaption>${esc(f.videoTitle || '')}</figcaption></figure>`
-        : img ? `<figure class="fw-photo"><img src="${img}" alt="${esc(f.photoAlt || '')}" loading="lazy" decoding="async"></figure>` : '') + '</article>';
+        : img ? `<figure class="fw-photo"><img src="${img}" alt="${esc(f.photoAlt || '')}" loading="lazy" decoding="async">${f.caption ? `<figcaption>${rich(f.caption)}</figcaption>` : ''}</figure>` : '') + '</article>';
   };
   $('#fw-sea').innerHTML = sea.map(item).join('');
   $('#fw-land').innerHTML = land.map(item).join('');
