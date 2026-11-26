@@ -591,3 +591,5 @@ mark{background:rgba(250,204,21,0.25);color:inherit;border-radius:2px;padding:0 
 .fw-item.has-photo:has(.fw-video){grid-template-columns:64px minmax(0,1fr) 340px}
 @media(max-width:800px){.fw-item.has-photo:has(.fw-video){grid-template-columns:minmax(0,1fr)}}
 .fw-photo figcaption{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.45}
+.fw-photo.fw-tall img{aspect-ratio:3/4;object-position:center}
+@media(max-width:800px){.fw-photo.fw-tall{max-width:360px;margin:0 auto}}
