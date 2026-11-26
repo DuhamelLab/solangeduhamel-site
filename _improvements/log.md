@@ -44,3 +44,20 @@ This folder starts with an underscore, so GitHub Pages does not publish it.
 | 2026-11-13 | — | S11 bot expansion of BCO-DMO and ReDATA aggregates into about 35 DataCite entries | declined/deferred by panel |
 | 2026-11-13 | — | S10 print-resolution press JPGs and repo-hosted CV PDF | declined/deferred by panel |
 | 2026-11-13 | — | E12(a) GoatCounter analytics | declined/deferred by panel |
+| 2026-11-26 | 1 | Make the router crash-proof and add tab deep links | proposed |
+| 2026-11-26 | 2 | Close the schema gap between data.js, the validator and the renderer; keep sitemap lastmod fresh | proposed |
+| 2026-11-26 | 3 | Cut phone paint cost (fixed gradient/grain layers) and add a portrait pause | proposed |
+| 2026-11-26 | 4 | Complete social/SEO metadata and add persistent identifiers | proposed |
+| 2026-11-26 | 5 | Light up 'Selected publications': draft the 'why' sentences for the PI | proposed |
+| 2026-11-26 | 6 | Team page roster-first (demote the 760px group photo) | proposed |
+| 2026-11-26 | 7 | CSS-only typographic refinement (text-wrap, tabular-nums, measure) | proposed |
+| 2026-11-26 | 8 | About page appointments as a semantic CV list | proposed |
+| 2026-11-26 | 9 | Phone-first publications layout without hidden filters | proposed |
+| 2026-11-26 | 10 | Alumni 'Now at' line (optional, PI-supplied only) | proposed |
+| 2026-11-26 | — | D1 hero CTA row (premise false; chip hover fix only) | declined/deferred by panel |
+| 2026-11-26 | — | D6 automatic light theme | declined/deferred by panel |
+| 2026-11-26 | — | E2 Playwright + axe CI smoke job (minimal slice only) | declined/deferred by panel |
+| 2026-11-26 | — | E5 data-driven Team/Awards/Appointments + strict CSP | declined/deferred by panel |
+| 2026-11-26 | — | S3 dataset-to-paper links and cite fields | declined/deferred by panel |
+| 2026-11-26 | — | S5 derived 'what to expect in the lab' block | declined/deferred by panel |
+| 2026-11-26 | — | S6 derived impact-at-a-glance strip | declined/deferred by panel |
