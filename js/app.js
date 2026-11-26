@@ -424,12 +424,14 @@ function renderFieldwork() {
     const sea = f.type === 'sea';
     const partners = String(f.chief || '').replace(/^With\s+/, '');
     const img = localSrc(f.photo);
-    return `<article class="fw-item${img ? ' has-photo' : ''}"><div class="fw-year">${esc(f.y)}</div><div class="fw-body">` +
+    const vid = /^media\/[a-z0-9_.-]+\.mp4$/i.test(String(f.video || '')) ? esc(f.video) : '';
+    return `<article class="fw-item${img || vid ? ' has-photo' : ''}"><div class="fw-year">${esc(f.y)}</div><div class="fw-body">` +
       `<h3>${rich(f.name)}${f.code ? ` <span class="fw-code">${esc(f.code)}</span>` : ''}</h3>` +
       `<p class="fw-meta">${esc(f.region)} &middot; ${esc(f.when)}</p><p class="fw-aim">${rich(f.aim)}</p>` +
       `<dl class="fw-dl"><dt>Our work</dt><dd>${rich(f.role)}</dd><dt>${sea ? 'Chief scientist' : 'Collaborators'}</dt><dd>${esc(partners)}</dd>` +
       `<dt>Lab members</dt><dd>${rich(f.team)}</dd></dl>${f.link ? ext(f.link, 'More about this expedition ↗', 'view-link') : ''}</div>` +
-      (img ? `<figure class="fw-photo"><img src="${img}" alt="${esc(f.photoAlt || '')}" loading="lazy" decoding="async"></figure>` : '') + '</article>';
+      (vid ? `<figure class="fw-photo fw-video"><video controls preload="none" playsinline width="960" height="540"${localSrc(f.poster) ? ` poster="${localSrc(f.poster)}"` : ''} aria-label="${esc(f.videoTitle || 'Video')}"><source src="${vid}" type="video/mp4"></video><figcaption>${esc(f.videoTitle || '')}</figcaption></figure>`
+        : img ? `<figure class="fw-photo"><img src="${img}" alt="${esc(f.photoAlt || '')}" loading="lazy" decoding="async"></figure>` : '') + '</article>';
   };
   $('#fw-sea').innerHTML = sea.map(item).join('');
   $('#fw-land').innerHTML = land.map(item).join('');

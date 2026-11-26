@@ -586,3 +586,7 @@ mark{background:rgba(250,204,21,0.25);color:inherit;border-radius:2px;padding:0 
 }
 @media print{.fw-item{break-inside:avoid}.fw-photo{display:none}}
 .fw-stat-sub{display:block;font-size:14px;color:var(--dim);margin-top:6px}
+.fw-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border-radius:6px;border:1px solid var(--border)}
+.fw-video figcaption{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.45}
+.fw-item.has-photo:has(.fw-video){grid-template-columns:64px minmax(0,1fr) 340px}
+@media(max-width:800px){.fw-item.has-photo:has(.fw-video){grid-template-columns:minmax(0,1fr)}}

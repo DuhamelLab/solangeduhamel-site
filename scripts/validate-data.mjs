@@ -64,6 +64,13 @@ if (isArr('fieldwork')) D.fieldwork.forEach((f, i) => {
   year(f, w); for (const k of ['when', 'name', 'region', 'aim', 'role', 'team']) nonEmpty(f, k, w);
   url(f.link, w, 'link');
   if (f.days != null && (!Number.isInteger(f.days) || f.days < 1 || f.days > 200)) err(w, '"days" must be a whole number of days at sea');
+  if (f.video) {
+    if (!/^media\/[A-Za-z0-9_.-]+\.mp4$/.test(f.video)) err(w, '"video" must be a path like "media/name.mp4"');
+    else if (!existsSync(new URL('../' + f.video, import.meta.url))) err(w, `video file ${f.video} does not exist`);
+    else if (statSync(new URL('../' + f.video, import.meta.url)).size > 40 * 1024 * 1024) err(w, 'video is over the 40 MB budget');
+    if (!f.videoTitle) err(w, '"videoTitle" (a short description) is required when "video" is set');
+    if (f.poster && !existsSync(new URL('../' + f.poster, import.meta.url))) err(w, `poster file ${f.poster} does not exist`);
+  }
   if (f.photo) {
     if (!/^images\/[A-Za-z0-9/_.-]+\.(webp|jpe?g|png|avif)$/.test(f.photo)) err(w, '"photo" must be a path like "images/field/name.webp"');
     else if (!existsSync(new URL('../' + f.photo, import.meta.url))) err(w, `photo file ${f.photo} does not exist`);
