@@ -423,15 +423,18 @@ function renderFieldwork() {
   const item = f => {
     const sea = f.type === 'sea';
     const partners = String(f.chief || '').replace(/^With\s+/, '');
-    const img = localSrc(f.photo);
+    /* Media: one "photo" (photo/photoAlt/caption/photoShape) or several in "photos" [{src, alt, caption, shape}], plus an optional video */
+    const pics = (Array.isArray(f.photos) ? f.photos : (f.photo ? [{ src: f.photo, alt: f.photoAlt, caption: f.caption, shape: f.photoShape }] : []))
+      .map(p => ({ src: localSrc(p.src), alt: p.alt || '', caption: p.caption || '', tall: p.shape === 'tall' })).filter(p => p.src);
     const vid = /^media\/[a-z0-9_.-]+\.mp4$/i.test(String(f.video || '')) ? esc(f.video) : '';
-    return `<article class="fw-item${img || vid ? ' has-photo' : ''}"><div class="fw-year">${esc(f.y)}</div><div class="fw-body">` +
+    const figs = (vid ? [`<figure class="fw-photo fw-video"><video controls preload="none" playsinline width="960" height="540"${localSrc(f.poster) ? ` poster="${localSrc(f.poster)}"` : ''} aria-label="${esc(f.videoTitle || 'Video')}"><source src="${vid}" type="video/mp4"></video><figcaption>${esc(f.videoTitle || '')}</figcaption></figure>`] : [])
+      .concat(pics.map(p => `<figure class="fw-photo${p.tall ? ' fw-tall' : ''}"><img src="${p.src}" alt="${esc(p.alt)}" loading="lazy" decoding="async">${p.caption ? `<figcaption>${rich(p.caption)}</figcaption>` : ''}</figure>`));
+    return `<article class="fw-item${figs.length ? ' has-photo' : ''}"><div class="fw-year">${esc(f.y)}</div><div class="fw-body">` +
       `<h3>${rich(f.name)}${f.code ? ` <span class="fw-code">${esc(f.code)}</span>` : ''}</h3>` +
       `<p class="fw-meta">${esc(f.region)} &middot; ${esc(f.when)}</p><p class="fw-aim">${rich(f.aim)}</p>` +
       `<dl class="fw-dl"><dt>Our work</dt><dd>${rich(f.role)}</dd><dt>${sea ? 'Chief scientist' : 'Collaborators'}</dt><dd>${esc(partners)}</dd>` +
       `<dt>Lab members</dt><dd>${rich(f.team)}</dd></dl>${f.link ? ext(f.link, 'More about this expedition ↗', 'view-link') : ''}</div>` +
-      (vid ? `<figure class="fw-photo fw-video"><video controls preload="none" playsinline width="960" height="540"${localSrc(f.poster) ? ` poster="${localSrc(f.poster)}"` : ''} aria-label="${esc(f.videoTitle || 'Video')}"><source src="${vid}" type="video/mp4"></video><figcaption>${esc(f.videoTitle || '')}</figcaption></figure>`
-        : img ? `<figure class="fw-photo${f.photoShape === 'tall' ? ' fw-tall' : ''}"><img src="${img}" alt="${esc(f.photoAlt || '')}" loading="lazy" decoding="async">${f.caption ? `<figcaption>${rich(f.caption)}</figcaption>` : ''}</figure>` : '') + '</article>';
+      (figs.length ? `<div class="fw-media${figs.length > 1 ? ' fw-multi' : ''}">${figs.join('')}</div>` : '') + '</article>';
   };
   $('#fw-sea').innerHTML = sea.map(item).join('');
   $('#fw-land').innerHTML = land.map(item).join('');

@@ -593,3 +593,10 @@ mark{background:rgba(250,204,21,0.25);color:inherit;border-radius:2px;padding:0 
 .fw-photo figcaption{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.45}
 .fw-photo.fw-tall img{aspect-ratio:3/4;object-position:center}
 @media(max-width:800px){.fw-photo.fw-tall{max-width:360px;margin:0 auto}}
+.fw-media{display:grid;gap:12px;align-content:start}
+.fw-media .fw-photo.fw-tall{max-width:none}
+.fw-media.fw-multi .fw-photo.fw-tall img{aspect-ratio:3/4}
+@media(max-width:800px){
+  .fw-media{order:-1}
+  .fw-media .fw-photo.fw-tall{max-width:360px;margin:0 auto}
+}

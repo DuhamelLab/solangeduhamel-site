@@ -71,6 +71,16 @@ if (isArr('fieldwork')) D.fieldwork.forEach((f, i) => {
     if (!f.videoTitle) err(w, '"videoTitle" (a short description) is required when "video" is set');
     if (f.poster && !existsSync(new URL('../' + f.poster, import.meta.url))) err(w, `poster file ${f.poster} does not exist`);
   }
+  if (f.photos != null) {
+    if (!Array.isArray(f.photos)) err(w, '"photos" must be a list');
+    else f.photos.forEach((p, j) => {
+      const pw = `${w} photos[${j}]`;
+      if (!/^images\/[A-Za-z0-9/_.-]+\.(webp|jpe?g|png|avif)$/.test(p.src || '')) err(pw, '"src" must be a path like "images/field/name.webp"');
+      else if (!existsSync(new URL('../' + p.src, import.meta.url))) err(pw, `photo file ${p.src} does not exist`);
+      if (!p.alt) err(pw, '"alt" (a short description of the photo) is required');
+      if (p.shape != null && p.shape !== 'tall') err(pw, '"shape" can only be "tall"');
+    });
+  }
   if (f.photoShape != null && f.photoShape !== 'tall') err(w, '"photoShape" can only be "tall"');
   if (f.photo) {
     if (!/^images\/[A-Za-z0-9/_.-]+\.(webp|jpe?g|png|avif)$/.test(f.photo)) err(w, '"photo" must be a path like "images/field/name.webp"');
