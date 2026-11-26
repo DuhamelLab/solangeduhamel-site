@@ -16,8 +16,8 @@ jobs:
     name: Validate js/data.js
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
       - name: Check data format, DOIs, tags, dates and image sizes
@@ -30,9 +30,9 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Check links in the page and data
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --max-concurrency 4 --accept 200,201,202,204,206,301,302,303,307,308,403,429 --exclude-mail index.html js/data.js
+          args: --no-progress --max-concurrency 4 --accept 200,201,202,204,206,301,302,303,307,308,403,429 index.html js/data.js
           fail: false
