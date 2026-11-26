@@ -8,6 +8,7 @@ Personal academic website of Dr. Solange Duhamel, served by GitHub Pages from th
 | `js/data.js` | **All content lists** — publications, preprints, projects, datasets, media, openings, metrics. The field list is documented at the top of the file. |
 | `js/app.js` | Renders the content, routing, tabs, filters |
 | `css/style.css`, `css/fonts.css` | Styles and self-hosted fonts (`fonts/`) |
+| `images/field/` | Fieldwork photos (one per expedition, 1200px wide WebP); referenced by `photo` in the `fieldwork` list of `js/data.js`. Originals are kept outside the site in `/Users/Website/photo-originals/`. |
 | `_improvements/` | Weekly review-panel proposals and the improvement log (not published) |
 
 ## Weekly updates

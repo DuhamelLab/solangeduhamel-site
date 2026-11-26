@@ -10,7 +10,8 @@ var SITE_DATA = {
   datasets: typeof datasets !== 'undefined' ? datasets : [], media: typeof media !== 'undefined' ? media : [],
   activeProjects: typeof activeProjects !== 'undefined' ? activeProjects : [], completedProjects: typeof completedProjects !== 'undefined' ? completedProjects : [],
   openings: typeof openings !== 'undefined' ? openings : [], metrics: typeof metrics !== 'undefined' ? metrics : null,
-  lastUpdated: typeof lastUpdated !== 'undefined' ? lastUpdated : '', openingsReviewed: typeof openingsReviewed !== 'undefined' ? openingsReviewed : ''
+  lastUpdated: typeof lastUpdated !== 'undefined' ? lastUpdated : '', openingsReviewed: typeof openingsReviewed !== 'undefined' ? openingsReviewed : '',
+  fieldwork: typeof fieldwork !== 'undefined' ? fieldwork : [], daysAtSea: typeof daysAtSea !== 'undefined' ? daysAtSea : 0
 };
 (function (S) {
 'use strict';
@@ -33,7 +34,7 @@ function highlightAuthor(a) { return rich(a).replace(ME, '<strong class="me">$1<
 const pubs = list(S.pubs), preprints = list(S.preprints), bookChapters = list(S.bookChapters),
   outreach = list(S.outreach), datasets = list(S.datasets), media = list(S.media),
   activeProjects = list(S.activeProjects), completedProjects = list(S.completedProjects),
-  openings = list(S.openings);
+  openings = list(S.openings), fieldwork = list(S.fieldwork);
 const metrics = S.metrics, lastUpdated = S.lastUpdated, openingsReviewed = S.openingsReviewed;
 
 /* Render a section without letting one bad entry blank the page */
@@ -50,13 +51,14 @@ function safely(fn, elId) {
 /* ---------- routing ---------- */
 const TITLES = {
   home: 'Solange Duhamel — Marine Microbiology, Biogeochemistry, and Astrobiology',
-  research: 'Research — Solange Duhamel', publications: 'Publications — Solange Duhamel',
+  research: 'Research — Solange Duhamel', fieldwork: 'Fieldwork — Solange Duhamel', publications: 'Publications — Solange Duhamel',
   team: 'Team — Solange Duhamel', opportunities: 'Opportunities — Solange Duhamel',
   data: 'Data and Resources — Solange Duhamel'
 };
 const RENDER = {
   home: [[renderLatest, 'latest-grid']],
   research: [[renderResearch, 'active-projects']],
+  fieldwork: [[renderFieldwork, 'fw-sea']],
   publications: [[renderPubSummary], [renderSelected, 'selected-pubs'], [initPubs, 'pub-list'],
     [renderPreprints, 'pub-preprints-list'], [renderBookChapters, 'pub-bookchapters-list'], [renderOutreach, 'pub-outreach-list']],
   opportunities: [[renderOpenings, 'openings-status']],
@@ -405,6 +407,32 @@ function renderPreprints() {
     const status = p.publishedDoi ? `<span class="preprint-status"><span class="pub-tag now-pub">Now published</span> ${ext('https://doi.org/' + p.publishedDoi, esc(p.publishedIn || 'Journal version') + ' ↗')}</span>` : '';
     return card({ y: p.y, t: p.t, a: p.a, j: p.j, doi: p.doi }, ` &middot; <span class="pub-tag">Preprint</span>${status}`);
   }).join('');
+}
+
+/* ---------- Fieldwork ---------- */
+const localSrc = u => (/^[a-z0-9][a-z0-9/_.-]*\.(webp|jpe?g|png|avif)$/i.test(String(u || '')) ? esc(u) : '');
+function renderFieldwork() {
+  const sea = fieldwork.filter(f => f.type === 'sea'), land = fieldwork.filter(f => f.type !== 'sea');
+  const stat = (n, label, sub) => `<div class="fw-stat"><span class="fw-stat-n">${esc(n)}</span><span class="fw-stat-l">${esc(label)}</span>${[].concat(sub || []).map(t => `<span class="fw-stat-sub">${esc(t)}</span>`).join('')}</div>`;
+  /* Days at sea: personally = cruises with Dr. Duhamel in "team"; whole lab = every cruise listed */
+  const aboardDays = sea.filter(f => /Solange Duhamel/.test(f.team || '')).reduce((t, f) => t + (Number(f.days) || 0), 0);
+  const labDays = sea.reduce((t, f) => t + (Number(f.days) || 0), 0);
+  const subs = [aboardDays ? `${aboardDays} days at sea personally` : '', labDays && labDays !== aboardDays ? `${labDays} days at sea, whole lab` : ''].filter(Boolean);
+  $('#fw-stats').innerHTML = stat(sea.length, 'research cruises', subs) +
+    stat(land.length, 'field campaigns on land');
+  const item = f => {
+    const sea = f.type === 'sea';
+    const partners = String(f.chief || '').replace(/^With\s+/, '');
+    const img = localSrc(f.photo);
+    return `<article class="fw-item${img ? ' has-photo' : ''}"><div class="fw-year">${esc(f.y)}</div><div class="fw-body">` +
+      `<h3>${rich(f.name)}${f.code ? ` <span class="fw-code">${esc(f.code)}</span>` : ''}</h3>` +
+      `<p class="fw-meta">${esc(f.region)} &middot; ${esc(f.when)}</p><p class="fw-aim">${rich(f.aim)}</p>` +
+      `<dl class="fw-dl"><dt>Our work</dt><dd>${rich(f.role)}</dd><dt>${sea ? 'Chief scientist' : 'Collaborators'}</dt><dd>${esc(partners)}</dd>` +
+      `<dt>Lab members</dt><dd>${rich(f.team)}</dd></dl>${f.link ? ext(f.link, 'More about this expedition ↗', 'view-link') : ''}</div>` +
+      (img ? `<figure class="fw-photo"><img src="${img}" alt="${esc(f.photoAlt || '')}" loading="lazy" decoding="async"></figure>` : '') + '</article>';
+  };
+  $('#fw-sea').innerHTML = sea.map(item).join('');
+  $('#fw-land').innerHTML = land.map(item).join('');
 }
 
 /* ---------- Opportunities ---------- */

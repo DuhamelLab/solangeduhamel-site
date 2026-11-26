@@ -1,7 +1,7 @@
 // Validates js/data.js before it reaches the live site.
 // Run locally:  node scripts/validate-data.mjs
 // Runs automatically on every pull request (.github/workflows/validate.yml).
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import vm from 'node:vm';
 
 const errors = [], warnings = [];
@@ -9,7 +9,7 @@ const src = readFileSync(new URL('../js/data.js', import.meta.url), 'utf8');
 let D;
 try {
   // Top-level const declarations are not visible on the vm context, so return them explicitly.
-  D = vm.runInNewContext(src + '\n;({pubs,preprints,bookChapters,outreach,datasets,media,activeProjects,completedProjects,openings,openingsReviewed,metrics,lastUpdated})', {}, { timeout: 2000 });
+  D = vm.runInNewContext(src + '\n;({pubs,preprints,bookChapters,outreach,datasets,media,activeProjects,completedProjects,openings,openingsReviewed,metrics,lastUpdated,fieldwork:typeof fieldwork!=="undefined"?fieldwork:[],daysAtSea:typeof daysAtSea!=="undefined"?daysAtSea:0})', {}, { timeout: 2000 });
 } catch (e) {
   console.error('✗ js/data.js does not run: ' + e.message);
   process.exit(1);
@@ -57,6 +57,19 @@ if (isArr('datasets')) D.datasets.forEach((p, i) => { const w = `datasets[${i}]`
 if (isArr('media')) D.media.forEach((p, i) => { const w = `media[${i}]`; nonEmpty(p, 'o', w); nonEmpty(p, 't', w); url(p.h, w, 'h'); });
 for (const k of ['activeProjects', 'completedProjects']) if (isArr(k)) D[k].forEach((p, i) => { const w = `${k}[${i}]`; nonEmpty(p, 't', w); nonEmpty(p, 'role', w); nonEmpty(p, 'years', w); url(p.awardUrl, w, 'awardUrl'); });
 if (isArr('openings')) D.openings.forEach((o, i) => { const w = `openings[${i}]`; nonEmpty(o, 'role', w); if (!['open', 'rolling', 'closed'].includes(o.status)) err(w, '"status" must be open, rolling or closed'); url(o.link, w, 'link'); });
+
+if (isArr('fieldwork')) D.fieldwork.forEach((f, i) => {
+  const w = `fieldwork[${i}] (${f.name || '?'})`;
+  if (!['sea', 'land'].includes(f.type)) err(w, '"type" must be "sea" or "land"');
+  year(f, w); for (const k of ['when', 'name', 'region', 'aim', 'role', 'team']) nonEmpty(f, k, w);
+  url(f.link, w, 'link');
+  if (f.days != null && (!Number.isInteger(f.days) || f.days < 1 || f.days > 200)) err(w, '"days" must be a whole number of days at sea');
+  if (f.photo) {
+    if (!/^images\/[A-Za-z0-9/_.-]+\.(webp|jpe?g|png|avif)$/.test(f.photo)) err(w, '"photo" must be a path like "images/field/name.webp"');
+    else if (!existsSync(new URL('../' + f.photo, import.meta.url))) err(w, `photo file ${f.photo} does not exist`);
+    if (!f.photoAlt) err(w, '"photoAlt" (a short description of the photo) is required when "photo" is set');
+  }
+});
 
 const ageDays = d => (Date.now() - new Date(d).getTime()) / 864e5;
 if (!DATE.test(D.lastUpdated || '')) err('lastUpdated', 'must be a date like "2026-11-13"');
