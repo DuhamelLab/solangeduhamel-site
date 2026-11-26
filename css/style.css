@@ -600,3 +600,7 @@ mark{background:rgba(250,204,21,0.25);color:inherit;border-radius:2px;padding:0 
   .fw-media{order:-1}
   .fw-media .fw-photo.fw-tall{max-width:360px;margin:0 auto}
 }
+/* Tall photos keep their own proportions (no cropping) */
+.fw-photo.fw-tall img,.fw-media.fw-multi .fw-photo.fw-tall img{aspect-ratio:auto 3/4;height:auto;width:100%}
+.fw-photo.fw-tall{width:100%}
+@media(max-width:800px){.fw-photo.fw-tall{width:100%;max-width:360px}}
